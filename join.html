@@ -11,12 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header>
         <div class="container">
-            <a href="index.html" class="logo-link">
-                <img src="logo.png" alt="Kingston United Cricket Club Logo" class="logo">
-            </a>
+            <a href="index.html" class="logo-link"><img src="logo.png" alt="Kingston United Cricket Club Logo" class="logo"></a>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -24,7 +21,7 @@
                     <li><a href="#">Results</a></li>
                     <li><a href="#">The Team</a></li>
                     <li><a href="#">Gallery</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="news.html">News</a></li>
                     <li><a href="join.html" class="active">Join The Club</a></li>
                     <li><a href="#">Contact</a></li>
@@ -32,62 +29,26 @@
             </nav>
         </div>
     </header>
-
     <main>
-        <div class="page-header">
-            <div class="container">
-                <h1>Join Our Club</h1>
-            </div>
-        </div>
-
+        <div class="page-header"><div class="container"><h1>Join Our Club</h1></div></div>
         <div class="container content-section">
             <div class="form-container">
                 <h2>Membership Application</h2>
                 <p>Interested in joining us? Fill out the form below and one of our club representatives will get back to you shortly with more details about our season, fees, and practice schedule.</p>
-                
                 <form name="join-request" method="POST" data-netlify="true" action="/thank-you.html">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="city">City / Town</label>
-                        <input type="text" id="city" name="city" placeholder="e.g., Kingston, Belleville" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="experience">Cricketing Experience</label>
-                        <select id="experience" name="experience" required>
-                            <option value="">-- Please select an option --</option>
-                            <option value="Beginner">Beginner (New to cricket)</option>
-                            <option value="School/Youth">Played in school / youth leagues</option>
-                            <option value="Experienced">Experienced club player</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="submit-button">Send Application</button>
-                    </div>
+                    <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" required></div>
+                    <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" required></div>
+                    <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone"></div>
+                    <div class="form-group"><label for="city">City / Town</label><input type="text" id="city" name="city" placeholder="e.g., Kingston, Belleville" required></div>
+                    <div class="form-group"><label for="experience">Cricketing Experience</label><select id="experience" name="experience" required><option value="">-- Please select an option --</option><option value="Beginner">Beginner (New to cricket)</option><option value="School/Youth">Played in school / youth leagues</option><option value="Experienced">Experienced club player</option></select></div>
+                    <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="5"></textarea></div>
+                    <div class="form-group"><button type="submit" class="submit-button">Send Application</button></div>
                 </form>
             </div>
         </div>
     </main>
-
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Kingston United Cricket Club. All Rights Reserved.</p>
-        </div>
+        <div class="container"><p>&copy; 2025 Kingston United Cricket Club. All Rights Reserved.</p></div>
     </footer>
-
 </body>
 </html>
