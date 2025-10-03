@@ -381,6 +381,19 @@ footer {
     color: var(--navy-blue);
 }
 
+.direct-contact {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+}
+
+.direct-contact a {
+    color: var(--navy-blue);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
 @media (max-width: 768px) {
     .leadership-grid {
         grid-template-columns: 1fr;
