@@ -172,7 +172,7 @@ footer p {
 }
 
 /* Responsive Design */
-@media (max-width: 992px) {
+@media (max-width: 992px) { /* Adjusted breakpoint for better nav handling */
     .featured-info .container {
         flex-direction: column;
         align-items: center;
