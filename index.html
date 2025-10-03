@@ -7,7 +7,7 @@
     <title>Kingston United Cricket Club</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -55,9 +55,10 @@
                     <p><strong>Location:</strong> Memorial Centre Park, Kingston</p>
                 </div>
                 <div class="info-box">
-                    <h2>Latest News</h2>
-                    <h3>Club Trials Announced for 2026 Season</h3>
-                    <p>We are excited to announce open trials for the upcoming season. All aspiring cricketers are welcome to attend. More details on the 'Join' page.</p>
+                    <h2>Live Cricket Headlines</h2>
+                    <div id="rss-feed-container">
+                        <p>Loading latest news...</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -68,6 +69,47 @@
             <p>&copy; 2025 Kingston United Cricket Club. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const feedContainer = document.getElementById('rss-feed-container');
+            // Using a free RSS-to-JSON converter proxy to avoid CORS issues
+            const rssFeedUrl = 'https://www.espncricinfo.com/rss/content/story/feeds/0.xml';
+            const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssFeedUrl)}`;
+
+            fetch(proxyUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'ok' && data.items) {
+                        feedContainer.innerHTML = ''; // Clear the "Loading..." message
+                        const feedList = document.createElement('ul');
+                        feedList.className = 'rss-feed-list';
+                        
+                        // Display up to 5 latest articles
+                        data.items.slice(0, 5).forEach(item => {
+                            const listItem = document.createElement('li');
+                            listItem.className = 'rss-item';
+
+                            const link = document.createElement('a');
+                            link.href = item.link;
+                            link.textContent = item.title;
+                            link.target = '_blank'; // Open link in a new tab
+                            link.rel = 'noopener noreferrer';
+
+                            listItem.appendChild(link);
+                            feedList.appendChild(listItem);
+                        });
+                        feedContainer.appendChild(feedList);
+                    } else {
+                        throw new Error('Failed to load RSS feed.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching RSS feed:', error);
+                    feedContainer.innerHTML = '<p>Could not load live headlines at this time.</p>';
+                });
+        });
+    </script>
 
 </body>
 </html>
