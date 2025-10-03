@@ -159,7 +159,7 @@ footer {
         width: 90%;
     }
     nav ul {
-        display: none; /* A simple solution for now. A full mobile menu requires JavaScript. */
+        display: none;
     }
 }
 
@@ -257,4 +257,58 @@ footer {
     color: var(--navy-blue);
     text-decoration: none;
     font-weight: 700;
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--light-gray);
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.form-container h2 {
+    text-align: center;
+    font-family: var(--font-heading);
+    color: var(--navy-blue);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: var(--font-body);
+    box-sizing: border-box; /* Important for padding */
+}
+
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--gold);
+    color: var(--navy-blue);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #dcbd7a;
 }
