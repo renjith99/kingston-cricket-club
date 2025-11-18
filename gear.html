@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <title>Recommended Gear - Kingston United Cricket Club</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
 
     <header>
         <div class="container">
             <a href="index.html" class="logo-link"><img src="logo.png" alt="Kingston United Cricket Club Logo" class="logo"></a>
-            <nav>
+            
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#">Fixtures</a></li>
@@ -31,8 +34,34 @@
                     <li><a href="https://spond.com/invite/OYHMH" class="nav-button" target="_blank" rel="noopener noreferrer">Member Login</a></li>
                 </ul>
             </nav>
+
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </div>
     </header>
+
+    <div class="mobile-nav" role="dialog" aria-modal="true">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Fixtures</a></li>
+                <li><a href="#">Results</a></li>
+                <li><a href="#">The Team</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gear.html" class="active">Gear</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="join.html">Join The Club</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://spond.com/invite/OYHMH" class="nav-button" target="_blank" rel="noopener noreferrer">Member Login</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <main>
         <div class="page-header">
@@ -48,7 +77,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="product-card">
-                            <img src="https://placehold.co/400x400/0a2342/c5a65B?text=Cricket+Bat" alt="Placeholder Cricket Bat">
+                            <img src="https://placehold.co/400x400/041C2C/7D622E?text=Cricket+Bat" alt="Placeholder Cricket Bat">
                             <h3>Kookaburra Kahuna Pro Bat</h3>
                             <p>An excellent choice for all-round players, offering a great balance of power and control.</p>
                             <a href="#" class="cta-button">Buy Now</a>
@@ -56,7 +85,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="product-card">
-                            <img src="https://placehold.co/400x400/0a2342/c5a65B?text=Batting+Gloves" alt="Placeholder Batting Gloves">
+                            <img src="https://placehold.co/400x400/041C2C/7D622E?text=Batting+Gloves" alt="Placeholder Batting Gloves">
                             <h3>Gray-Nicolls Legend Gloves</h3>
                             <p>Top-tier protection and flexibility, ensuring comfort and safety at the crease.</p>
                             <a href="#" class="cta-button">Buy Now</a>
@@ -64,7 +93,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="product-card">
-                            <img src="https://placehold.co/400x400/0a2342/c5a65B?text=Cricket+Ball" alt="Placeholder Cricket Ball">
+                            <img src="https://placehold.co/400x400/041C2C/7D622E?text=Cricket+Ball" alt="Placeholder Cricket Ball">
                             <h3>Dukes County International A</h3>
                             <p>The benchmark for quality leather balls, hand-stitched for durability and performance.</p>
                             <a href="#" class="cta-button">Buy Now</a>
@@ -88,6 +117,20 @@
             <p>&copy; 2025 Kingston United Cricket Club. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.querySelector('.nav-toggle');
+            const mobileNav = document.querySelector('.mobile-nav');
+            
+            navToggle.addEventListener('click', () => {
+                const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', !isExpanded);
+                mobileNav.classList.toggle('is-active');
+                document.body.classList.toggle('no-scroll');
+            });
+        });
+    </script>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 

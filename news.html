@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <title>News - Kingston United Cricket Club</title>
-    <link rel="stylesheet" href="styles.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
             <a href="index.html" class="logo-link"><img src="logo.png" alt="Kingston United Cricket Club Logo" class="logo"></a>
-            <nav>
+            
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#">Fixtures</a></li>
@@ -29,8 +32,35 @@
                     <li><a href="https://spond.com/invite/OYHMH" class="nav-button" target="_blank" rel="noopener noreferrer">Member Login</a></li>
                 </ul>
             </nav>
+
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </div>
     </header>
+
+    <div class="mobile-nav" role="dialog" aria-modal="true">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Fixtures</a></li>
+                <li><a href="#">Results</a></li>
+                <li><a href="#">The Team</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gear.html">Gear</a></li>
+                <li><a href="news.html" class="active">News</a></li>
+                <li><a href="join.html">Join The Club</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://spond.com/invite/OYHMH" class="nav-button" target="_blank" rel="noopener noreferrer">Member Login</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <main>
         <div class="page-header"><div class="container"><h1>International Cricket News</h1></div></div>
         <div class="container content-section">
@@ -39,7 +69,7 @@
                     <p class="news-date">October 02, 2025</p>
                     <h2><a href="article-1.html">Bangladesh Edges Out Afghanistan in Thrilling T20I Encounter</a></h2>
                     <p>Bangladesh secured a hard-fought victory over Afghanistan in the first T20I in Sharjah, chasing down a competitive total of 152 with just 8 balls to spare. Key performances under pressure saw them take a 1-0 lead in the series.</p>
-                    <a href="article-1.html" class="read-more">Read More &rarr;</a>
+                    <a href="article-1.html" class="read-more">Read More</a>
                 </div>
             </div>
         </div>
@@ -54,5 +84,18 @@
             <p>&copy; 2025 Kingston United Cricket Club. All Rights Reserved.</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.querySelector('.nav-toggle');
+            const mobileNav = document.querySelector('.mobile-nav');
+            
+            navToggle.addEventListener('click', () => {
+                const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', !isExpanded);
+                mobileNav.classList.toggle('is-active');
+                document.body.classList.toggle('no-scroll');
+            });
+        });
+    </script>
 </body>
 </html>
