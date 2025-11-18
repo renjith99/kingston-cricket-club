@@ -35,7 +35,7 @@
     --white:        var(--color-white);
     --light-gray:   var(--gray-50);
 
-    /* Typography (ensure fonts are loaded in HTML via <link>) */
+    /* Typography */
     --font-heading: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-body:    "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
@@ -51,7 +51,7 @@
     --transition-fast: 0.2s ease-out;
     --transition-med:  0.3s ease-out;
 
-    --header-height: 100px;
+    --header-height: 90px;
 }
 
 /* ---------------------------------------------------------
@@ -78,7 +78,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Prevents scrolling when mobile menu is open (toggled by JS) */
+/* Prevents scrolling when mobile menu is open */
 .no-scroll {
     overflow: hidden;
 }
@@ -124,13 +124,13 @@ section,
 }
 
 /* ---------------------------------------------------------
-   3. Header & Navigation
+   3. HEADER & NAVIGATION — FULL REBUILD
    --------------------------------------------------------- */
 
-header {
+.site-header {
     background: linear-gradient(135deg, var(--navy-darkest) 0%, var(--navy-dark) 60%, var(--color-blue-7692) 100%);
     color: var(--white);
-    padding: 12px 0;
+    padding: 8px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -138,47 +138,83 @@ header {
     backdrop-filter: blur(10px);
 }
 
-header .container {
+.header-inner {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     min-height: var(--header-height);
-    gap: 24px;
+    gap: 32px;
 }
 
-/* Logo */
+/* Brand / logo block */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+}
+
+.brand-mark {
+    flex-shrink: 0;
+}
+
 .logo {
-    height: 100px;
-    max-height: 100px;
+    height: 80px;
+    width: auto;
     display: block;
+    object-fit: contain;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.brand-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.brand-subtitle {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.75);
 }
 
 /* Desktop navigation */
 .desktop-nav {
-    display: block;
+    flex: 1;
 }
 
-.desktop-nav ul {
+.nav-list {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: flex-end;
+    gap: 26px;
 }
 
-.desktop-nav a {
+.nav-list a {
     position: relative;
     color: var(--white);
     font-weight: 600;
-    font-size: 14px;
-    padding: 6px 0;
-    letter-spacing: 0.05em;
+    font-size: 13px;
+    padding: 4px 0;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     transition: color var(--transition-med);
+    white-space: nowrap;
 }
 
-.desktop-nav a::after {
+.nav-list a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -189,15 +225,15 @@ header .container {
     transition: width var(--transition-med);
 }
 
-.desktop-nav a:hover::after,
-.desktop-nav a:focus-visible::after,
-.desktop-nav a.active::after {
+.nav-list a:hover::after,
+.nav-list a:focus-visible::after,
+.nav-list a.active::after {
     width: 100%;
 }
 
-.desktop-nav a:hover,
-.desktop-nav a:focus-visible,
-.desktop-nav a.active {
+.nav-list a:hover,
+.nav-list a:focus-visible,
+.nav-list a.active {
     color: var(--gold);
 }
 
@@ -208,7 +244,8 @@ header .container {
     padding: 8px 18px !important;
     border-radius: 999px;
     border-bottom: none !important;
-    font-size: 14px;
+    font-size: 13px !important;
+    font-weight: 700;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-med);
 }
@@ -228,20 +265,14 @@ header .container {
     border-radius: 50%;
     width: 44px;
     height: 44px;
-    display: none; /* shown via media query */
+    display: none; /* Shown on tablet/mobile */
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.nav-toggle[aria-expanded="true"] {
-    background: rgba(0, 0, 0, 0.25);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
-}
-
-/* If using three span bars inside nav-toggle (optional icon animation) */
-.nav-toggle span {
+.nav-toggle-bar {
     display: block;
     width: 20px;
     height: 2px;
@@ -251,8 +282,8 @@ header .container {
     transition: transform var(--transition-fast), opacity var(--transition-fast), background-color var(--transition-fast);
 }
 
-.nav-toggle span::before,
-.nav-toggle span::after {
+.nav-toggle-bar::before,
+.nav-toggle-bar::after {
     content: "";
     position: absolute;
     left: 0;
@@ -263,28 +294,33 @@ header .container {
     transition: transform var(--transition-fast), opacity var(--transition-fast), background-color var(--transition-fast);
 }
 
-.nav-toggle span::before {
+.nav-toggle-bar::before {
     top: -6px;
 }
 
-.nav-toggle span::after {
+.nav-toggle-bar::after {
     top: 6px;
 }
 
-.nav-toggle[aria-expanded="true"] span {
+.nav-toggle[aria-expanded="true"] {
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar {
     background-color: transparent;
 }
 
-.nav-toggle[aria-expanded="true"] span::before {
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar::before {
     transform: translateY(6px) rotate(45deg);
 }
 
-.nav-toggle[aria-expanded="true"] span::after {
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar::after {
     transform: translateY(-6px) rotate(-45deg);
 }
 
 /* ---------------------------------------------------------
-   4. Hero Section
+   4. HERO SECTION
    --------------------------------------------------------- */
 
 .hero {
@@ -358,8 +394,21 @@ header .container {
     box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45);
 }
 
+.cta-button.outlined {
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    box-shadow: none;
+}
+
+.cta-button.outlined:hover,
+.cta-button.outlined:focus-visible {
+    background: rgba(125, 98, 46, 0.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
 /* ---------------------------------------------------------
-   5. Featured Info / Cards
+   5. FEATURED INFO / CARDS
    --------------------------------------------------------- */
 
 .featured-info {
@@ -418,7 +467,7 @@ header .container {
 }
 
 /* ---------------------------------------------------------
-   6. Page Header (Internal Pages)
+   6. PAGE HEADER (INTERNAL PAGES)
    --------------------------------------------------------- */
 
 .page-header {
@@ -444,7 +493,7 @@ header .container {
 }
 
 /* ---------------------------------------------------------
-   7. Content Sections
+   7. CONTENT SECTIONS
    --------------------------------------------------------- */
 
 .content-section {
@@ -454,7 +503,7 @@ header .container {
 }
 
 /* ---------------------------------------------------------
-   8. News Listing & Article Styles
+   8. NEWS LISTING & ARTICLE STYLES
    --------------------------------------------------------- */
 
 .news-item {
@@ -492,7 +541,6 @@ header .container {
     color: var(--gold);
 }
 
-/* "Read more" CTA */
 .read-more {
     display: inline-flex;
     align-items: center;
@@ -565,7 +613,7 @@ header .container {
 }
 
 /* ---------------------------------------------------------
-   9. Forms (Join / Contact / Registration)
+   9. FORMS
    --------------------------------------------------------- */
 
 .form-container {
@@ -625,7 +673,6 @@ header .container {
     background-color: #fbfdff;
 }
 
-/* Primary form submit button */
 .submit-button {
     width: 100%;
     padding: 15px;
@@ -648,7 +695,7 @@ header .container {
 }
 
 /* ---------------------------------------------------------
-   10. About Us / Leadership
+   10. ABOUT / LEADERSHIP
    --------------------------------------------------------- */
 
 .about-intro {
@@ -733,7 +780,7 @@ header .container {
 }
 
 /* ---------------------------------------------------------
-   11. RSS Feed Styles
+   11. RSS FEED
    --------------------------------------------------------- */
 
 .rss-feed-list {
@@ -763,7 +810,7 @@ header .container {
 }
 
 /* ---------------------------------------------------------
-   12. Slideshow / Products (Swiper)
+   12. SWIPER / PRODUCT CARDS
    --------------------------------------------------------- */
 
 .swiper-container {
@@ -812,7 +859,6 @@ header .container {
     margin-bottom: 20px;
 }
 
-/* Swiper navigation */
 .swiper-button-next,
 .swiper-button-prev {
     color: var(--gold) !important;
@@ -823,7 +869,7 @@ header .container {
 }
 
 /* ---------------------------------------------------------
-   13. Footer
+   13. FOOTER
    --------------------------------------------------------- */
 
 footer {
@@ -867,33 +913,109 @@ footer p {
 }
 
 /* ---------------------------------------------------------
-   14. Responsive Design
+   14. SPONSORS SECTION
    --------------------------------------------------------- */
 
-/* Desktop (>= 993px) */
-@media (min-width: 993px) {
-    .desktop-nav {
-        display: block;
-    }
-
-    .nav-toggle {
-        display: none;
-    }
+.sponsors-section {
+    padding: 60px 0;
+    background: var(--light-gray);
+    text-align: center;
 }
 
-/* Tablets & up to small laptops (<= 992px) */
-@media (max-width: 992px) {
+.section-title {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--navy-darkest);
+    margin-bottom: 12px;
+}
 
-    /* Option B: Center Logo + Right-aligned Hamburger */
-    header .container {
-        justify-content: center;
-        position: relative;
+.sponsor-intro {
+    max-width: 720px;
+    margin: 0 auto 40px auto;
+    font-size: 1.05rem;
+    color: var(--gray-700);
+}
+
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.sponsor-grid.page {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.sponsor-card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sponsor-card.large {
+    flex-direction: column;
+    height: auto;
+    padding: 30px;
+    text-align: center;
+}
+
+.sponsor-card img {
+    max-width: 120px;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+.sponsor-card.large img {
+    max-width: 160px;
+    margin-bottom: 15px;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* ---------------------------------------------------------
+   15. RESPONSIVE DESIGN
+   --------------------------------------------------------- */
+
+/* Large desktop: prevent wrapping by reducing gap if needed */
+@media (max-width: 1200px) {
+    .nav-list {
+        gap: 20px;
     }
 
     .logo {
-        margin: 0 auto;
-        height: 90px;
-        max-height: 90px;
+        height: 76px;
+    }
+
+    .brand-title {
+        font-size: 17px;
+    }
+}
+
+/* Tablets & small laptops (<= 992px) */
+@media (max-width: 992px) {
+
+    .header-inner {
+        justify-content: space-between;
+        gap: 18px;
+    }
+
+    .brand-text {
+        display: none; /* Logo only on tablet/mobile to save space */
+    }
+
+    .logo {
+        height: 70px;
     }
 
     .desktop-nav {
@@ -902,10 +1024,6 @@ footer p {
 
     .nav-toggle {
         display: inline-flex;
-        position: absolute;
-        right: 16px;
-        top: 50%;
-        transform: translateY(-50%);
     }
 
     .hero {
@@ -942,19 +1060,12 @@ footer p {
 /* Mobile phones (<= 768px) */
 @media (max-width: 768px) {
 
-    header .container {
-        justify-content: center;
-    }
-
-    .nav-toggle {
-        right: 12px;
-        width: 46px;
-        height: 46px;
+    .header-inner {
+        justify-content: space-between;
     }
 
     .logo {
-        height: 80px;
-        max-height: 80px;
+        height: 64px;
     }
 
     body {
@@ -1003,13 +1114,12 @@ footer p {
     }
 
     .logo {
-        height: 70px;
-        max-height: 70px;
+        height: 60px;
     }
 }
 
 /* ---------------------------------------------------------
-   15. Mobile Navigation Menu (Slide-Down)
+   16. MOBILE NAVIGATION MENU (SLIDE-DOWN)
    --------------------------------------------------------- */
 
 .mobile-nav {
@@ -1023,7 +1133,6 @@ footer p {
     z-index: 999;
     overflow-y: auto;
 
-    /* Slide-down + fade animation (Option A) */
     opacity: 0;
     transform: translateY(-12px);
     visibility: hidden;
@@ -1035,7 +1144,6 @@ footer p {
     will-change: transform, opacity;
 }
 
-/* Active mobile menu state (toggled via JS) */
 .mobile-nav.is-active {
     opacity: 1;
     transform: translateY(0);
@@ -1071,109 +1179,14 @@ footer p {
     padding: 12px 24px !important;
     border-radius: 999px;
 }
-/* Fix for Mobile Menu Gap on small screens */
+
+/* Fix header height vs drawer offset on very small screens */
 @media (max-width: 480px) {
     :root {
-        --header-height: 90px; /* Adjusts variable to match smaller logo */
+        --header-height: 90px;
     }
-    
+
     .mobile-nav {
-        top: var(--header-height); /* Uses the updated height */
+        top: var(--header-height);
     }
-}
-/* ============================== */
-/* SPONSORS SECTION */
-/* ============================== */
-
-.sponsors-section {
-    padding: 60px 0;
-    background: var(--light-gray);
-    text-align: center;
-}
-
-.sponsor-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.sponsor-grid.page {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
-.sponsor-card {
-    background: white;
-    border-radius: 14px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 140px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.sponsor-card.large {
-    flex-direction: column;
-    height: auto;
-    padding: 30px;
-    text-align: center;
-}
-
-.sponsor-card img {
-    max-width: 120px;
-    max-height: 80px;
-    object-fit: contain;
-}
-
-.sponsor-card.large img {
-    max-width: 160px;
-    margin-bottom: 15px;
-}
-
-.sponsor-card.large h3 {
-    margin: 10px 0 10px;
-    font-size: 1.4rem;
-    color: var(--navy-blue);
-}
-
-.sponsor-card.large p {
-    font-size: 0.95rem;
-    margin-bottom: 15px;
-}
-
-.sponsor-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-.sponsor-intro {
-    max-width: 720px;
-    margin: 0 auto 40px auto;
-    font-size: 1.1rem;
-}
-
-.become-sponsor-box {
-    margin-top: 70px;
-    background: var(--navy-blue);
-    color: white;
-    padding: 40px 30px;
-    border-radius: 14px;
-    text-align: center;
-}
-
-.become-sponsor-box h2 {
-    margin-bottom: 15px;
-    font-size: 2rem;
-}
-
-.become-sponsor-box p {
-    margin-bottom: 20px;
-    font-size: 1.05rem;
-}
-
-.cta-button.small {
-    padding: 10px 16px;
-    font-size: 0.9rem;
 }

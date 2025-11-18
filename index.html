@@ -14,14 +14,25 @@
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <a href="index.html" class="logo-link">
-            <img src="logo.png" alt="Kingston United Cricket Club Logo" class="logo">
+<!-- ======================================================
+     HEADER — NEW RESPONSIVE, ACCESSIBLE BUILD
+     ====================================================== -->
+<header class="site-header">
+    <div class="container header-inner">
+        <!-- Brand / Logo -->
+        <a href="index.html" class="brand">
+            <div class="brand-mark">
+                <img src="logo.png" alt="Kingston United Cricket Club logo" class="logo">
+            </div>
+            <div class="brand-text">
+                <span class="brand-title">Kingston United</span>
+                <span class="brand-subtitle">Cricket Club</span>
+            </div>
         </a>
 
-        <nav class="desktop-nav">
-            <ul>
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav" aria-label="Main navigation">
+            <ul class="nav-list">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="#">Fixtures</a></li>
                 <li><a href="#">Results</a></li>
@@ -31,21 +42,35 @@
                 <li><a href="gear.html">Gear</a></li>
                 <li><a href="join.html">Join The Club</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="https://spond.com/invite/OYHMH" class="nav-button" target="_blank" rel="noopener noreferrer">Member Login</a></li>
+                <li><a href="sponsors.html">Sponsors</a></li>
+                <li>
+                    <a href="https://spond.com/invite/OYHMH"
+                       class="nav-button"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Member Login
+                    </a>
+                </li>
             </ul>
         </nav>
 
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+        <!-- Mobile Toggle -->
+        <button class="nav-toggle"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="primary-mobile-nav">
+            <span class="nav-toggle-bar"></span>
         </button>
     </div>
 </header>
 
-<div class="mobile-nav">
+<!-- Mobile Navigation Drawer -->
+<div id="primary-mobile-nav"
+     class="mobile-nav"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Mobile navigation">
     <nav>
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
@@ -57,11 +82,22 @@
             <li><a href="gear.html">Gear</a></li>
             <li><a href="join.html">Join The Club</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="https://spond.com/invite/OYHMH" class="nav-button" target="_blank">Member Login</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+            <li>
+                <a href="https://spond.com/invite/OYHMH"
+                   class="nav-button"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Member Login
+                </a>
+            </li>
         </ul>
     </nav>
 </div>
 
+<!-- ======================================================
+     MAIN CONTENT
+     ====================================================== -->
 <main>
 
     <!-- HERO -->
@@ -70,7 +106,7 @@
             <h1>Kingston United Cricket Club</h1>
             <p class="tagline">United by Passion, Driven by Teamwork</p>
             <p class="welcome-text">
-                Welcome to Kingston United Cricket Club — a place where passion for cricket meets community spirit...
+                Welcome to Kingston United Cricket Club — a place where passion for cricket meets community spirit. We are a growing leather-ball cricket team built on respect, discipline, and the belief that every player has a role to play in our success. With the guidance of dedicated coaches and leaders, we focus on skill development, teamwork, and creating opportunities for players to compete at higher levels.
             </p>
             <a href="join.html" class="cta-button">Join The Club</a>
         </div>
@@ -83,8 +119,8 @@
                 <h2>Winter Schedule</h2>
                 <h3>2026 Pre-Season Training</h3>
                 <p><strong>Period:</strong> January – April 2026</p>
-                <p><strong>Focus:</strong> Indoor nets, fitness & conditioning.</p>
-                <p><strong>Season Start:</strong> Outdoor matches resume May/June</p>
+                <p><strong>Focus:</strong> Indoor nets, fitness &amp; conditioning.</p>
+                <p><strong>Season Start:</strong> Outdoor matches resume May/June.</p>
             </div>
 
             <div class="info-box">
@@ -96,22 +132,21 @@
         </div>
     </section>
 
-    <!-- SPONSORS SECTION (NEW) -->
+    <!-- SPONSORS -->
     <section class="sponsors-section">
         <div class="container">
             <h2 class="section-title">Our Sponsors</h2>
+            <p class="sponsor-intro">
+                We are proud to be supported by local businesses that believe in building a strong cricket community in Kingston.
+            </p>
 
             <div class="sponsor-grid">
                 <div class="sponsor-card">
-                    <img src="sponsor1.png" alt="Sponsor 1">
+                    <img src="sponsor1.png" alt="Sponsor 1 logo">
                 </div>
-
                 <div class="sponsor-card">
-                    <img src="sponsor2.png" alt="Sponsor 2">
+                    <img src="sponsor2.png" alt="Sponsor 2 logo">
                 </div>
-
-                <!-- Future sponsor slot (auto wraps, no need for placeholder) -->
-                <!-- <div class="sponsor-card"><img src="sponsor3.png" alt=""></div> -->
             </div>
 
             <a href="sponsors.html" class="cta-button outlined">View All Sponsors</a>
@@ -120,13 +155,23 @@
 
 </main>
 
+<!-- ======================================================
+     FOOTER
+     ====================================================== -->
 <footer>
     <div class="container">
         <div class="social-links">
-            <a href="https://www.instagram.com/kingstonunitedcricketclub" target="_blank">
-                <!-- Full Instagram SVG -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0..." />
+            <a href="https://www.instagram.com/kingstonunitedcricketclub"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="Follow us on Instagram">
+                <!-- Full Instagram SVG icon -->
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="24" height="24"
+                     viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069s-3.584-.011-4.85-.069c-3.225-.149-4.771-1.664-4.919-4.919C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85C2.381 3.898 3.924 2.379 7.153 2.231 8.419 2.175 8.799 2.163 12 2.163m0-2.163C8.741 0 8.332.015 7.052.072 2.695.272.272 2.695.072 7.052.015 8.332 0 8.741 0 12c0 3.259.015 3.668.072 4.948.2 4.357 2.623 6.78 6.98 6.98C8.332 23.985 8.741 24 12 24s3.668-.015 4.948-.072c4.357-.2 6.78-2.623 6.98-6.98.057-1.28.072-1.689.072-4.948 0-3.259-.015-3.668-.072-4.948-.2-4.357-2.623-6.78-6.98-6.98C15.668.015 15.259 0 12 0z"/>
+                    <path d="M12 5.838A6.162 6.162 0 1 0 18.162 12 6.173 6.173 0 0 0 12 5.838zm0 10.162A4 4 0 1 1 16 12a4.005 4.005 0 0 1-4 4z"/>
+                    <circle cx="18.406" cy="5.594" r="1.44"/>
                 </svg>
             </a>
         </div>
@@ -134,17 +179,34 @@
     </div>
 </footer>
 
+<!-- ======================================================
+     SCRIPTS — NAV + RSS
+     ====================================================== -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const navToggle = document.querySelector(".nav-toggle");
-    const mobileNav = document.querySelector(".mobile-nav");
+    const mobileNav = document.getElementById("primary-mobile-nav");
+    const body = document.body;
 
-    navToggle.addEventListener("click", () => {
-        const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
-        navToggle.setAttribute("aria-expanded", !isExpanded);
-        mobileNav.classList.toggle("is-active");
-        document.body.classList.toggle("no-scroll");
-    });
+    if (navToggle && mobileNav) {
+        const toggleMenu = () => {
+            const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
+            navToggle.setAttribute("aria-expanded", String(!isExpanded));
+            mobileNav.classList.toggle("is-active");
+            body.classList.toggle("no-scroll");
+        };
+
+        navToggle.addEventListener("click", toggleMenu);
+
+        // Close menu when a mobile link is clicked
+        mobileNav.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                if (mobileNav.classList.contains("is-active")) {
+                    toggleMenu();
+                }
+            });
+        });
+    }
 });
 </script>
 
@@ -152,13 +214,15 @@ document.addEventListener("DOMContentLoaded", () => {
 // RSS FEED LOADER
 document.addEventListener("DOMContentLoaded", function() {
     const feedContainer = document.getElementById("rss-feed-container");
+    if (!feedContainer) return;
+
     const rssFeedUrl = "https://www.espncricinfo.com/rss/content/story/feeds/0.xml";
     const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssFeedUrl)}`;
 
     fetch(proxyUrl)
         .then(res => res.json())
         .then(data => {
-            if (data.status === "ok") {
+            if (data.status === "ok" && Array.isArray(data.items)) {
                 feedContainer.innerHTML = "";
                 const list = document.createElement("ul");
                 list.className = "rss-feed-list";
@@ -166,11 +230,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 data.items.slice(0, 5).forEach(item => {
                     const li = document.createElement("li");
                     li.className = "rss-item";
-                    li.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
+                    li.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>`;
                     list.appendChild(li);
                 });
 
                 feedContainer.appendChild(list);
+            } else {
+                feedContainer.innerHTML = "<p>Could not load headlines.</p>";
             }
         })
         .catch(() => {
