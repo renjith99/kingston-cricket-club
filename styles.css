@@ -1,6 +1,6 @@
 /* =========================================================
    Kingston Cricket Club — Premium UI Theme
-   Stylesheet: styles.css (Overhauled + Mobile Nav Fix)
+   Stylesheet: styles.css (Overhauled + Logo Size Fix)
    ========================================================= */
 
 /* ---------------------------------------------------------
@@ -51,7 +51,7 @@
      --transition-fast: 0.2s ease-out;
      --transition-med:  0.3s ease-out;
 
-     --header-height: 80px;
+     --header-height: 100px; /* --- UPDATED: Increased height --- */
 }
 
 /* ---------------------------------------------------------
@@ -147,8 +147,8 @@ header .container {
 }
 
 .logo {
-     height: 80px;
-     max-height: 80px;
+     height: 100px;      /* --- UPDATED: Increased height --- */
+     max-height: 100px;  /* --- UPDATED: Increased height --- */
      display: block;
 }
 
@@ -836,6 +836,12 @@ footer p {
    --------------------------------------------------------- */
 
 /* Medium screens */
+@media (min-width: 993px) {
+    .desktop-nav {
+        display: block; /* Show desktop nav on larger screens */
+    }
+}
+
 @media (max-width: 992px) {
      header .container {
          gap: 16px;
@@ -871,7 +877,6 @@ footer p {
          grid-template-columns: 1fr;
      }
 
-     /* --- UPDATED: Swapped old logic for new --- */
      .desktop-nav {
         display: none; 
      }
@@ -940,7 +945,7 @@ footer p {
 .mobile-nav {
     display: none; /* Hidden by default */
     position: fixed;
-    top: var(--header-height, 80px); /* Start below the header */
+    top: 104px; /* --- UPDATED: Matches new --header-height (100px) + padding (4px) --- */
     left: 0;
     right: 0;
     bottom: 0;
