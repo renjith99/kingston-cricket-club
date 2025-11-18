@@ -1,6 +1,6 @@
 /* =========================================================
    Kingston Cricket Club — Premium UI Theme
-   Stylesheet: styles.css (Overhauled + Mobile Toggle Fix)
+   Stylesheet: styles.css (Overhauled + Nav Fix)
    ========================================================= */
 
 /* ---------------------------------------------------------
@@ -51,7 +51,7 @@
      --transition-fast: 0.2s ease-out;
      --transition-med:  0.3s ease-out;
 
-     --header-height: 100px;
+     --header-height: 100px; 
 }
 
 /* ---------------------------------------------------------
@@ -147,14 +147,14 @@ header .container {
 }
 
 .logo {
-     height: 100px;
+     height: 100px; 
      max-height: 100px;
      display: block;
 }
 
 /* Primary nav (desktop) */
 .desktop-nav {
-    display: none; /* Hidden on mobile by default */
+    display: block; /* --- FIX: Show desktop nav by default --- */
 }
 
 .desktop-nav ul {
@@ -163,7 +163,7 @@ header .container {
      padding: 0;
      display: flex;
      align-items: center;
-     gap: 24px;
+     gap: 20px; /* --- FIX: Reduced gap to fit links --- */
 }
 
 .desktop-nav a {
@@ -171,9 +171,9 @@ header .container {
      text-decoration: none;
      color: var(--white);
      font-weight: 600;
-     font-size: 15px;
+     font-size: 14px; /* --- FIX: Reduced font size to fit links --- */
      padding: 6px 0;
-     letter-spacing: 0.06em;
+     letter-spacing: 0.05em; /* --- FIX: Reduced spacing to fit links --- */
      text-transform: uppercase;
      transition: color var(--transition-med);
 }
@@ -227,7 +227,7 @@ header .container {
     border-radius: 50%;
     width: 44px;
     height: 44px;
-    display: none; /* --- THIS IS THE FIX: Hidden by default --- */
+    display: none; /* --- FIX: Hide toggle on desktop --- */
     align-items: center;
     justify-content: center;
     cursor: pointer;
