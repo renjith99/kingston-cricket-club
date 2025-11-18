@@ -4,85 +4,181 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Message Sent - Kingston United Cricket Club</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Paper Plane Animation */
+        .plane-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 25px auto;
+            animation: flyIn 0.9s ease-out forwards;
+        }
+
+        @keyframes flyIn {
+            0% { transform: translateY(40px) scale(0.7); opacity: 0; }
+            70% { transform: translateY(-6px) scale(1.05); opacity: 1; }
+            100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+
+        /* Wrapper */
+        .thank-you-wrapper {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .thank-you-wrapper h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            color: var(--navy-blue);
+        }
+
+        .thank-you-wrapper p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+    </style>
 </head>
+
 <body>
+
+    <!-- HEADER -->
     <header>
         <div class="container">
-            <a href="index.html" class="logo-link"><img src="logo.png" alt="Kingston United Cricket Club Logo" class="logo"></a>
-            
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="Kingston United Cricket Club Logo" class="logo">
+            </a>
+
             <nav class="desktop-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="#">Fixtures</a></li>
                     <li><a href="#">Results</a></li>
-                    <li><a href="#">The Team</a></li>
+                    <li><a href="#">Our Team</a></li>
                     <li><a href="#">Gallery</a></li>
-                    <li><a href="about.html">About Us</a></li>
                     <li><a href="gear.html">Gear</a></li>
-                    <li><a href="news.html">News</a></li>
                     <li><a href="join.html">Join The Club</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="https://spond.com/invite/OYHMH" class="nav-button" target="_blank" rel="noopener noreferrer">Member Login</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li>
+                        <a href="https://spond.com/invite/OYHMH" class="nav-button" target="_blank" rel="noopener noreferrer">
+                            Member Login
+                        </a>
+                    </li>
                 </ul>
             </nav>
 
             <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
             </button>
         </div>
     </header>
 
+    <!-- MOBILE NAV -->
     <div class="mobile-nav" role="dialog" aria-modal="true">
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
                 <li><a href="#">Fixtures</a></li>
                 <li><a href="#">Results</a></li>
-                <li><a href="#">The Team</a></li>
+                <li><a href="#">Our Team</a></li>
                 <li><a href="#">Gallery</a></li>
-                <li><a href="about.html">About Us</a></li>
                 <li><a href="gear.html">Gear</a></li>
-                <li><a href="news.html">News</a></li>
                 <li><a href="join.html">Join The Club</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="https://spond.com/invite/OYHMH" class="nav-button" target="_blank" rel="noopener noreferrer">Member Login</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li>
+                    <a href="https://spond.com/invite/OYHMH" class="nav-button" target="_blank" rel="noopener noreferrer">
+                        Member Login
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>
 
+    <!-- MAIN -->
     <main>
-        <div class="page-header"><div class="container"><h1>Message Sent!</h1></div></div>
-        <div class="container content-section" style="text-align: center;">
-            <h2>Thank You</h2>
-            <p>Your message has been successfully sent. We'll review it and get back to you as soon as possible.</p>
-            <a href="index.html" class="cta-button" style="margin-top: 20px;">Back to Homepage</a>
+        <div class="page-header">
+            <div class="container">
+                <h1>Message Sent</h1>
+            </div>
+        </div>
+
+        <div class="container content-section">
+            <div class="thank-you-wrapper">
+
+                <div class="plane-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 2L11 13" />
+                        <path d="M22 2L15 22 11 13 2 9 22 2" />
+                    </svg>
+                </div>
+
+                <h2>Your Message Has Been Sent</h2>
+                <p>
+                    Thank you for contacting us!  
+                    Our team will review your message and respond as soon as possible.
+                </p>
+
+                <a href="index.html" class="cta-button">Return to Homepage</a>
+            </div>
         </div>
     </main>
+
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://www.instagram.com/kingstonunitedcricketclub" target="_blank" rel="noopener noreferrer" title="Follow us on Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069s-3.584-.011-4.85-.069c-3.225-.149-4.771-1.664-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163m0-2.163C8.74 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.74 24 12 24s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98C23.986 15.667 24 15.26 24 12s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.26 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+                <a href="https://www.instagram.com/kingstonunitedcricketclub" target="_blank" rel="noopener noreferrer">
+                    <!-- Full Instagram SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 
+                        3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 
+                        1.645.069 4.85s-.011 3.584-.069 4.85c-.149 
+                        3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069s-3.584-.011-4.85-.069c-3.225-.149-4.771-1.664-4.919-4.919C2.175 
+                        15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85C2.38 
+                        3.897 3.896 2.38 7.052 2.232 8.319 2.175 
+                        8.699 2.163 12 2.163zm0-2.163C8.74 
+                        0 8.333.014 7.053.072 2.695.272.273 2.69.073 
+                        7.052.014 8.333 0 8.74 0 12s.014 3.667.072 
+                        4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 
+                        23.986 8.74 24 12 24s3.667-.014 
+                        4.947-.072c4.358-.2 6.78-2.618 
+                        6.98-6.98.058-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947C23.774 
+                        2.618 21.356.2 16.999.072 15.719.014 15.312 
+                        0 12 0zm0 5.838a6.162 6.162 
+                        0 1 0 0 12.324 6.162 6.162 
+                        0 0 0 0-12.324zM12 16a4 
+                        4 0 1 1 0-8 4 4 0 0 
+                        1 0 8zm6.406-11.845a1.44 
+                        1.44 0 1 0 0 2.88 1.44 
+                        1.44 0 0 0 0-2.88z"/>
+                    </svg>
                 </a>
             </div>
+
             <p>&copy; 2025 Kingston United Cricket Club. All Rights Reserved.</p>
         </div>
     </footer>
+
+
+    <!-- MOBILE NAV JS -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const navToggle = document.querySelector('.nav-toggle');
             const mobileNav = document.querySelector('.mobile-nav');
-            
+
             navToggle.addEventListener('click', () => {
                 const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
                 navToggle.setAttribute('aria-expanded', !isExpanded);
@@ -91,5 +187,6 @@
             });
         });
     </script>
+
 </body>
 </html>

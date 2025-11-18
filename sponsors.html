@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsors - Kingston United Cricket Club</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <a href="index.html" class="logo-link"><img src="logo.png" alt="Kingston United Cricket Club Logo" class="logo"></a>
+
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Fixtures</a></li>
+                <li><a href="#">Results</a></li>
+                <li><a href="#">The Team</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gear.html">Gear</a></li>
+                <li><a href="join.html">Join The Club</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="sponsors.html" class="active">Sponsors</a></li>
+                <li><a href="https://spond.com/invite/OYHMH" class="nav-button" target="_blank" rel="noopener noreferrer">Member Login</a></li>
+            </ul>
+        </nav>
+
+        <button class="nav-toggle" aria-expanded="false">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </div>
+</header>
+
+<div class="mobile-nav">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Fixtures</a></li>
+            <li><a href="#">Results</a></li>
+            <li><a href="#">The Team</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gear.html">Gear</a></li>
+            <li><a href="join.html">Join The Club</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="sponsors.html" class="active">Sponsors</a></li>
+            <li><a href="https://spond.com/invite/OYHMH" class="nav-button" target="_blank">Member Login</a></li>
+        </ul>
+    </nav>
+</div>
+
+<main>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Our Sponsors</h1>
+        </div>
+    </div>
+
+    <div class="container content-section">
+
+        <p class="sponsor-intro">
+            We proudly partner with local businesses who support the growth of cricket in Kingston.  
+            Their contributions help us fund youth programs, equipment, tournaments, and facilities.
+        </p>
+
+        <div class="sponsor-grid page">
+            <div class="sponsor-card large">
+                <img src="sponsor1.png" alt="Sponsor 1">
+                <h3>Sponsor One</h3>
+                <p>
+                    Sponsor One is a valued supporter providing financial backing and resources for Kingston United Cricket Club.
+                    Their commitment to local sports strengthens our programs and helps us deliver a world-class cricket environment.
+                </p>
+                <a href="#" class="cta-button small" target="_blank">Visit Website</a>
+            </div>
+
+            <div class="sponsor-card large">
+                <img src="sponsor2.png" alt="Sponsor 2">
+                <h3>Sponsor Two</h3>
+                <p>
+                    Sponsor Two contributes to the development of our community cricket initiatives, ensuring accessibility and quality for all members.
+                </p>
+                <a href="#" class="cta-button small" target="_blank">Visit Website</a>
+            </div>
+
+            <!-- Future sponsor card -->
+            <!--
+            <div class="sponsor-card large">
+                <img src="sponsor3.png" alt="Sponsor 3">
+                <h3>Sponsor Three</h3>
+                <p>Description...</p>
+                <a href="#" class="cta-button small">Visit Website</a>
+            </div>
+            -->
+        </div>
+
+        <div class="become-sponsor-box">
+            <h2>Become a Sponsor</h2>
+            <p>
+                Want to support Kingston’s fastest-growing cricket community?  
+                We have sponsor tiers for small businesses, corporate partners, and youth-focused organizations.
+            </p>
+            <a href="contact.html" class="cta-button">Contact Us</a>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="social-links">
+            <a href="https://www.instagram.com/kingstonunitedcricketclub" target="_blank">
+                <!-- full instagram svg -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M12 2.163c3.204 0..." /></svg>
+            </a>
+        </div>
+        <p>&copy; 2025 Kingston United Cricket Club. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const navToggle = document.querySelector(".nav-toggle");
+    const mobileNav = document.querySelector(".mobile-nav");
+
+    navToggle.addEventListener("click", () => {
+        const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", !isExpanded);
+        mobileNav.classList.toggle("is-active");
+        document.body.classList.toggle("no-scroll");
+    });
+});
+</script>
+
+</body>
+</html>
