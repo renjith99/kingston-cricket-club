@@ -4,36 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
-    <title>Contact Us - Kingston United Cricket Club</title>
+    <title>Contact Us – Kingston United Cricket Club</title>
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" 
+        rel="stylesheet"
+    >
 
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="container">
-            <a href="index.html" aria-label="Go to homepage" class="logo-link">
+    <!-- ==========================================
+         PREMIUM HEADER — Centered Mobile Logo
+    =========================================== -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <!-- Brand -->
+            <a href="index.html" class="brand" aria-label="Kingston United Cricket Club">
                 <img src="logo.png" alt="Kingston United Cricket Club Logo" class="logo">
+                <span class="brand-text">
+                    <span class="brand-title">Kingston United<br>Cricket Club</span>
+                    <span class="brand-subtitle">Est. 2024</span>
+                </span>
             </a>
 
-            <nav class="desktop-nav" aria-label="Primary navigation">
-                <ul>
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="#">Fixtures</a></li>
                     <li><a href="#">Results</a></li>
                     <li><a href="#">Our Team</a></li>
                     <li><a href="#">Gallery</a></li>
                     <li><a href="gear.html">Gear</a></li>
-                    <li><a href="join.html">Join The Club</a></li>
+                    <li><a href="join.html">Join</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
+
                     <li>
                         <a href="https://spond.com/invite/OYHMH"
                            class="nav-button"
@@ -45,51 +59,30 @@
                 </ul>
             </nav>
 
-            <button class="nav-toggle"
-                    aria-label="Toggle navigation menu"
-                    aria-expanded="false"
-                    aria-controls="mobile-nav">
-                <svg width="24" height="24" viewBox="0 0 24 24"
-                     fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 12H21"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
-                    <path d="M3 6H21"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
-                    <path d="M3 18H21"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
-                </svg>
+            <!-- Mobile Toggle -->
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="nav-toggle-bar"></span>
             </button>
         </div>
     </header>
 
-    <!-- MOBILE NAV -->
-    <div id="mobile-nav"
-         class="mobile-nav"
-         role="dialog"
-         aria-modal="true"
-         aria-hidden="true"
-         aria-label="Mobile navigation menu">
 
-        <nav aria-label="Mobile primary navigation">
+    <!-- ==========================================
+         MOBILE NAV DRAWER
+    =========================================== -->
+    <div class="mobile-nav" id="mobileNav">
+        <nav aria-label="Mobile Menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="#">Fixtures</a></li>
                 <li><a href="#">Results</a></li>
                 <li><a href="#">Our Team</a></li>
                 <li><a href="#">Gallery</a></li>
                 <li><a href="gear.html">Gear</a></li>
-                <li><a href="join.html">Join The Club</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+
                 <li>
                     <a href="https://spond.com/invite/OYHMH"
                        class="nav-button"
@@ -102,58 +95,84 @@
         </nav>
     </div>
 
+
+
     <main>
+
+        <!-- ==========================================
+             PAGE HEADER 
+        =========================================== -->
         <section class="page-header">
             <div class="container">
                 <h1>Contact Us</h1>
+                <p class="slogan">We’d love to hear from you.</p>
             </div>
         </section>
 
-        <section class="container content-section">
+        <!-- ==========================================
+             CONTACT FORM + DIRECT CONTACT
+        =========================================== -->
+        <section class="content-section container">
+
+            <!-- FORM CARD -->
             <div class="form-container">
                 <h2>Send us a Message</h2>
-                <p>
-                    Have a question or a sponsorship inquiry? The best way to reach us is by filling
-                    out the form below.
+                <p style="text-align:center; max-width:720px; margin:0 auto 24px;">
+                    Whether you're interested in joining, sponsoring, or learning more about the club,
+                    the best way to reach us is through this form.
                 </p>
+
                 <form name="contact" method="POST" data-netlify="true" action="/thank-you-contact.html">
                     <input type="hidden" name="form-name" value="contact">
+
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input id="name" name="name" type="text" required>
                     </div>
+
                     <div class="form-group">
                         <label for="email">Your Email</label>
                         <input id="email" name="email" type="email" required>
                     </div>
+
                     <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="6" required></textarea>
                     </div>
+
                     <button type="submit" class="submit-button">Send Message</button>
                 </form>
             </div>
 
+            <!-- DIRECT EMAIL BLOCK -->
             <div class="direct-contact">
-                <h3>Direct Email</h3>
-                <p>For inquiries with attachments or specific needs, you can email us directly at:</p>
-                <a href="mailto:kingstonunitedcricket@gmail.com">kingstonunitedcricket@gmail.com</a>
+                <h3>Email Us Directly</h3>
+                <p>If you need to send attachments or longer documents, contact us here:</p>
+
+                <a href="mailto:kingstonunitedcricket@gmail.com">
+                    kingstonunitedcricket@gmail.com
+                </a>
             </div>
+
         </section>
     </main>
 
-    <!-- FOOTER -->
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
     <footer>
         <div class="container">
+
             <div class="social-links">
                 <a href="https://www.instagram.com/kingstonunitedcricketclub"
                    target="_blank"
                    rel="noopener noreferrer"
                    title="Follow us on Instagram">
+
                     <svg xmlns="http://www.w3.org/2000/svg"
-                         width="24"
-                         height="24"
-                         viewBox="0 0 24 24">
+                         width="24" height="24" viewBox="0 0 24 24">
                         <path d="M12 2.163c3.204 0 3.584.012 4.85.07
                         3.252.148 4.771 1.691 4.919 4.919.058
                         1.265.069 1.645.069 4.85s-.011 3.584-.069
@@ -180,41 +199,36 @@
                     </svg>
                 </a>
             </div>
+
             <p>&copy; 2025 Kingston United Cricket Club. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- NAV SCRIPT -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const navToggle = document.querySelector(".nav-toggle");
-            const mobileNav = document.getElementById("mobile-nav");
-            const links = mobileNav.querySelectorAll("a");
 
-            function closeMobileNav() {
+
+    <!-- ==========================================
+         MOBILE NAV SCRIPT
+    =========================================== -->
+    <script>
+        const navToggle = document.querySelector(".nav-toggle");
+        const mobileNav = document.getElementById("mobileNav");
+
+        navToggle.addEventListener("click", () => {
+            const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+
+            navToggle.setAttribute("aria-expanded", String(!isOpen));
+            mobileNav.classList.toggle("is-active");
+            document.body.classList.toggle("no-scroll");
+        });
+
+        mobileNav.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
                 mobileNav.classList.remove("is-active");
-                mobileNav.setAttribute("aria-hidden", "true");
                 navToggle.setAttribute("aria-expanded", "false");
                 document.body.classList.remove("no-scroll");
-            }
-
-            navToggle.addEventListener("click", () => {
-                const isOpen = mobileNav.classList.contains("is-active");
-
-                if (isOpen) {
-                    closeMobileNav();
-                } else {
-                    mobileNav.classList.add("is-active");
-                    mobileNav.setAttribute("aria-hidden", "false");
-                    navToggle.setAttribute("aria-expanded", "true");
-                    document.body.classList.add("no-scroll");
-                }
             });
-
-            links.forEach(link =>
-                link.addEventListener("click", closeMobileNav)
-            );
         });
     </script>
+
 </body>
 </html>

@@ -4,97 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
-    <title>About Us - Kingston United Cricket Club</title>
+    <title>About Us – Kingston United Cricket Club</title>
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="container">
-            <a href="index.html" aria-label="Go to homepage" class="logo-link">
-                <img src="logo.png" alt="Kingston United Cricket Club Logo" class="logo">
+    <!-- ===========================
+         PREMIUM HEADER + NAV
+    ============================ -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <!-- Brand (Logo + text) -->
+            <a href="index.html" class="brand" aria-label="Kingston United Cricket Club">
+                <img src="logo.png" class="logo" alt="Kingston United Cricket Club Logo">
+                <span class="brand-text">
+                    <span class="brand-title">Kingston United<br>Cricket Club</span>
+                    <span class="brand-subtitle">Est. 2024</span>
+                </span>
             </a>
 
-            <nav class="desktop-nav" aria-label="Primary navigation">
-                <ul>
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
                     <li><a href="#">Fixtures</a></li>
                     <li><a href="#">Results</a></li>
                     <li><a href="#">Our Team</a></li>
                     <li><a href="#">Gallery</a></li>
                     <li><a href="gear.html">Gear</a></li>
-                    <li><a href="join.html">Join The Club</a></li>
+                    <li><a href="join.html">Join</a></li>
                     <li><a href="contact.html">Contact</a></li>
+
                     <li>
                         <a href="https://spond.com/invite/OYHMH"
-                           class="nav-button"
                            target="_blank"
-                           rel="noopener noreferrer">
+                           rel="noopener noreferrer"
+                           class="nav-button">
                            Member Login
                         </a>
                     </li>
                 </ul>
             </nav>
 
+            <!-- Mobile Toggle -->
             <button class="nav-toggle"
-                    aria-label="Toggle navigation menu"
-                    aria-expanded="false"
-                    aria-controls="mobile-nav">
-                <svg width="24" height="24" viewBox="0 0 24 24"
-                     fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 12H21"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
-                    <path d="M3 6H21"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
-                    <path d="M3 18H21"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
-                </svg>
+                    aria-label="Toggle navigation"
+                    aria-expanded="false">
+                <span class="nav-toggle-bar"></span>
             </button>
+
         </div>
     </header>
 
-    <!-- MOBILE NAV -->
-    <div id="mobile-nav"
-         class="mobile-nav"
-         role="dialog"
-         aria-modal="true"
-         aria-hidden="true"
-         aria-label="Mobile navigation menu">
-
-        <nav aria-label="Mobile primary navigation">
+    <!-- ===========================
+         MOBILE NAV DRAWER
+    ============================ -->
+    <div class="mobile-nav" id="mobileNav">
+        <nav aria-label="Mobile Menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a class="active" href="about.html">About</a></li>
                 <li><a href="#">Fixtures</a></li>
                 <li><a href="#">Results</a></li>
                 <li><a href="#">Our Team</a></li>
                 <li><a href="#">Gallery</a></li>
                 <li><a href="gear.html">Gear</a></li>
-                <li><a href="join.html">Join The Club</a></li>
+                <li><a href="join.html">Join</a></li>
                 <li><a href="contact.html">Contact</a></li>
+
                 <li>
                     <a href="https://spond.com/invite/OYHMH"
-                       class="nav-button"
                        target="_blank"
-                       rel="noopener noreferrer">
+                       rel="noopener noreferrer"
+                       class="nav-button">
                        Member Login
                     </a>
                 </li>
@@ -103,6 +95,10 @@
     </div>
 
     <main>
+
+        <!-- ===========================
+             PAGE HEADER
+        ============================ -->
         <section class="page-header">
             <div class="container">
                 <h1>About Our Club</h1>
@@ -110,108 +106,129 @@
             </div>
         </section>
 
-        <section class="container content-section">
+        <!-- ===========================
+             ABOUT INTRO
+        ============================ -->
+        <section class="content-section">
             <div class="about-intro">
                 <p>
-                    Building a united cricket family in Kingston, where passion meets discipline
+                    Building a united cricket family in Kingston — where passion meets discipline,
                     and every player finds their place.
                 </p>
             </div>
 
+            <!-- ===========================
+                 HISTORY
+            ============================ -->
             <section class="about-section">
                 <h2>Our History</h2>
+
                 <p>
-                    Kingston United Cricket Club was founded with a vision to bring together passionate
-                    cricketers in Kingston under one banner. What began as a simple idea — to create a
-                    true leather-ball cricket club — has quickly grown into a vibrant community of players
-                    committed to discipline, teamwork, and excellence.
+                    Kingston United Cricket Club was founded with a vision to bring passionate players together
+                    under one banner. What began as a small idea to build a true leather-ball cricket club has grown
+                    into one of Kingston’s most disciplined cricket communities.
                 </p>
+
                 <p>
-                    From our early beginnings, the club has become a space where players from different
-                    backgrounds, regions, and cultures come together, united by their love for the game.
-                    Our journey is one of building not just a cricket team, but a cricketing culture in
-                    Kingston — one that inspires young players, welcomes experienced cricketers, and
-                    creates lasting memories both on and off the field.
+                    Our members come from diverse backgrounds, cultures, and regions — yet the spirit of cricket
+                    unites us. We are committed to building a cricketing culture that supports youth development,
+                    respects tradition, and creates unforgettable experiences on and off the field.
                 </p>
             </section>
 
+            <!-- ===========================
+                 VALUES
+            ============================ -->
             <section class="about-section">
-                <h2>Our Mission &amp; Values</h2>
+                <h2>Our Mission & Values</h2>
+
                 <p>
-                    At Kingston United, our mission is clear: to nurture talent, build discipline, and create
-                    opportunities for cricketers in Kingston to grow and shine. We believe in:
+                    Our mission is simple: to nurture talent, build discipline, and offer a structured pathway
+                    for cricketers in Kingston. We believe in:
                 </p>
+
                 <ul class="values-list">
                     <li><strong>Respect:</strong> Every player, opponent, and supporter deserves dignity on and off the field.</li>
-                    <li><strong>Teamwork:</strong> Cricket is a team sport — we win together, we learn together, and we grow together.</li>
-                    <li><strong>Excellence:</strong> Whether it’s in training, matches, or attitude, we strive to raise our standards every day.</li>
-                    <li><strong>Inclusion:</strong> Our club welcomes players from all walks of life, reflecting the diversity and unity of Kingston.</li>
+                    <li><strong>Teamwork:</strong> We win together, learn together, and grow together.</li>
+                    <li><strong>Excellence:</strong> From training to match days, we strive to raise the bar every single day.</li>
+                    <li><strong>Inclusion:</strong> Our club reflects Kingston’s diversity and welcomes players of all backgrounds and skill levels.</li>
                 </ul>
             </section>
 
+            <!-- ===========================
+                 LEADERSHIP GRID
+            ============================ -->
             <section class="about-section">
                 <h2>Meet the Leadership</h2>
+
                 <div class="leadership-grid">
+
                     <article class="leader-profile">
                         <h3>Directors</h3>
-                        <p>A dedicated group of four leaders providing vision and direction for the club.</p>
-                    </article>
-
-                    <article class="leader-profile">
-                        <h3>Manager (Renjith)</h3>
                         <p>
-                            The driving force behind logistics, planning, and ensuring that everything from ground
-                            bookings to training sessions runs smoothly.
+                            A dedicated group of leaders providing the long-term vision, structure, and governance
+                            behind Kingston United Cricket Club.
                         </p>
                     </article>
 
                     <article class="leader-profile">
-                        <h3>Captain (Kishore)</h3>
+                        <h3>Manager — Renjith</h3>
                         <p>
-                            Leading from the front with strategy and inspiration, responsible for the team’s
-                            performance and on-field decisions.
+                            Oversees planning, logistics, scheduling, and ensures that all club operations
+                            run like clockwork — from ground bookings to training sessions.
                         </p>
                     </article>
 
                     <article class="leader-profile">
-                        <h3>Vice-Captain (Hamza)</h3>
+                        <h3>Captain — Kishore</h3>
                         <p>
-                            Supporting the captain and stepping up to ensure balance and motivation within the team.
+                            Leads the team on and off the field with strategy, motivation, and a relentless
+                            drive for performance excellence.
                         </p>
                     </article>
 
                     <article class="leader-profile">
-                        <h3>Coach &amp; Mentor (Noman)</h3>
+                        <h3>Vice-Captain — Hamza</h3>
                         <p>
-                            The heart of our training, designing sessions, guiding players on technique, fitness, and
-                            discipline, and setting the standard for professionalism.
+                            Supports team balance, mindset, and discipline, stepping up whenever the situation demands.
                         </p>
                     </article>
 
                     <article class="leader-profile">
-                        <h3>Social Media &amp; Onboarding (Joemon)</h3>
+                        <h3>Coach & Mentor — Noman</h3>
                         <p>
-                            The voice of Kingston United, sharing our journey, stories, and achievements with the wider
-                            community.
+                            Designs training programs, mentors players, and is the club’s guiding force for discipline,
+                            technique, conditioning, and professionalism.
                         </p>
                     </article>
+
+                    <article class="leader-profile">
+                        <h3>Media & Onboarding — Joemon</h3>
+                        <p>
+                            The voice of Kingston United — managing social media, outreach, and welcoming new members
+                            into the club community.
+                        </p>
+                    </article>
+
                 </div>
             </section>
+
         </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- ===========================
+         FOOTER
+    ============================ -->
     <footer>
         <div class="container">
+
             <div class="social-links">
                 <a href="https://www.instagram.com/kingstonunitedcricketclub"
                    target="_blank"
                    rel="noopener noreferrer"
                    title="Follow us on Instagram">
                     <svg xmlns="http://www.w3.org/2000/svg"
-                         width="24"
-                         height="24"
-                         viewBox="0 0 24 24">
+                         width="24" height="24" viewBox="0 0 24 24">
                         <path d="M12 2.163c3.204 0 3.584.012 4.85.07
                         3.252.148 4.771 1.691 4.919 4.919.058
                         1.265.069 1.645.069 4.85s-.011 3.584-.069
@@ -238,41 +255,36 @@
                     </svg>
                 </a>
             </div>
+
             <p>&copy; 2025 Kingston United Cricket Club. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- NAV SCRIPT -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const navToggle = document.querySelector(".nav-toggle");
-            const mobileNav = document.getElementById("mobile-nav");
-            const links = mobileNav.querySelectorAll("a");
 
-            function closeMobileNav() {
+    <!-- ===========================
+         MOBILE NAV SCRIPT
+    ============================ -->
+    <script>
+        const navToggle = document.querySelector(".nav-toggle");
+        const mobileNav = document.getElementById("mobileNav");
+
+        navToggle.addEventListener("click", () => {
+            const expanded = navToggle.getAttribute("aria-expanded") === "true";
+
+            navToggle.setAttribute("aria-expanded", String(!expanded));
+            mobileNav.classList.toggle("is-active");
+            document.body.classList.toggle("no-scroll");
+        });
+
+        // Close mobile menu when clicking any link
+        mobileNav.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
                 mobileNav.classList.remove("is-active");
-                mobileNav.setAttribute("aria-hidden", "true");
                 navToggle.setAttribute("aria-expanded", "false");
                 document.body.classList.remove("no-scroll");
-            }
-
-            navToggle.addEventListener("click", () => {
-                const isOpen = mobileNav.classList.contains("is-active");
-
-                if (isOpen) {
-                    closeMobileNav();
-                } else {
-                    mobileNav.classList.add("is-active");
-                    mobileNav.setAttribute("aria-hidden", "false");
-                    navToggle.setAttribute("aria-expanded", "true");
-                    document.body.classList.add("no-scroll");
-                }
             });
-
-            links.forEach(link =>
-                link.addEventListener("click", closeMobileNav)
-            );
         });
     </script>
+
 </body>
 </html>

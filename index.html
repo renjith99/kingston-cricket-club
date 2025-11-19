@@ -1,48 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kingston United Cricket Club</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="styles.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-<!-- ======================================================
-     HEADER — NEW RESPONSIVE, ACCESSIBLE BUILD
-     ====================================================== -->
+<!-- ===================================================================
+     PREMIUM HEADER — Centered Mobile Logo, Desktop Flex Layout
+     =================================================================== -->
 <header class="site-header">
     <div class="container header-inner">
-        <!-- Brand / Logo -->
-        <a href="index.html" class="brand">
-            <div class="brand-mark">
-                <img src="logo.png" alt="Kingston United Cricket Club logo" class="logo">
-            </div>
-            <div class="brand-text">
+
+        <!-- Brand -->
+        <a href="index.html" class="brand" aria-label="Kingston United Cricket Club">
+            <img src="logo.png" class="logo" alt="Kingston United Cricket Club Logo" />
+
+            <span class="brand-text">
                 <span class="brand-title">Kingston United</span>
                 <span class="brand-subtitle">Cricket Club</span>
-            </div>
+            </span>
         </a>
 
         <!-- Desktop Navigation -->
-        <nav class="desktop-nav" aria-label="Main navigation">
+        <nav class="desktop-nav" aria-label="Main Navigation">
             <ul class="nav-list">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="#">Fixtures</a></li>
                 <li><a href="#">Results</a></li>
                 <li><a href="#">The Team</a></li>
                 <li><a href="#">Gallery</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="gear.html">Gear</a></li>
-                <li><a href="join.html">Join The Club</a></li>
+                <li><a href="join.html">Join</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="sponsors.html">Sponsors</a></li>
+
                 <li>
                     <a href="https://spond.com/invite/OYHMH"
                        class="nav-button"
@@ -55,34 +62,31 @@
         </nav>
 
         <!-- Mobile Toggle -->
-        <button class="nav-toggle"
-                type="button"
-                aria-label="Toggle navigation"
-                aria-expanded="false"
-                aria-controls="primary-mobile-nav">
+        <button class="nav-toggle" aria-label="Open Menu" aria-expanded="false">
             <span class="nav-toggle-bar"></span>
         </button>
+
     </div>
 </header>
 
-<!-- Mobile Navigation Drawer -->
-<div id="primary-mobile-nav"
-     class="mobile-nav"
-     role="dialog"
-     aria-modal="true"
-     aria-label="Mobile navigation">
-    <nav>
+
+<!-- ===================================================================
+     MOBILE NAV — Slide Down Drawer
+     =================================================================== -->
+<div class="mobile-nav" id="mobileNav">
+    <nav aria-label="Mobile Navigation">
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="#">Fixtures</a></li>
             <li><a href="#">Results</a></li>
             <li><a href="#">The Team</a></li>
             <li><a href="#">Gallery</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="gear.html">Gear</a></li>
-            <li><a href="join.html">Join The Club</a></li>
+            <li><a href="join.html">Join</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="sponsors.html">Sponsors</a></li>
+
             <li>
                 <a href="https://spond.com/invite/OYHMH"
                    class="nav-button"
@@ -95,135 +99,157 @@
     </nav>
 </div>
 
-<!-- ======================================================
-     MAIN CONTENT
-     ====================================================== -->
+
+
+<!-- ===================================================================
+     HERO — Premium League-Style Hero Section
+     =================================================================== -->
 <main>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container">
-            <h1>Kingston United Cricket Club</h1>
-            <p class="tagline">United by Passion, Driven by Teamwork</p>
-            <p class="welcome-text">
-                Welcome to Kingston United Cricket Club — a place where passion for cricket meets community spirit. We are a growing leather-ball cricket team built on respect, discipline, and the belief that every player has a role to play in our success. With the guidance of dedicated coaches and leaders, we focus on skill development, teamwork, and creating opportunities for players to compete at higher levels.
-            </p>
-            <a href="join.html" class="cta-button">Join The Club</a>
+<section class="hero">
+    <div class="container">
+        <h1>Kingston United Cricket Club</h1>
+
+        <p class="tagline">United by Passion. Driven by Teamwork.</p>
+
+        <p class="welcome-text">
+            Welcome to Kingston United Cricket Club — Kingston’s fastest growing leather-ball cricket 
+            community. We are committed to performance, discipline, and skill development, while building 
+            a strong cricketing culture for players of all levels.
+        </p>
+
+        <a href="join.html" class="cta-button">Join The Club</a>
+    </div>
+</section>
+
+
+
+<!-- ===================================================================
+     FEATURED INFO — Winter Schedule + Live RSS Headlines
+     =================================================================== -->
+<section class="featured-info">
+    <div class="container">
+
+        <!-- Info Box 1 -->
+        <div class="info-box">
+            <h2>Winter Schedule</h2>
+
+            <h3>2026 Pre-Season Training</h3>
+            <p><strong>January – April 2026</strong></p>
+            <p><strong>Focus:</strong> Indoor nets, strength & conditioning</p>
+            <p><strong>Season Start:</strong> Outdoor matches resume May/June</p>
         </div>
-    </section>
 
-    <!-- FEATURED INFO -->
-    <section class="featured-info">
-        <div class="container">
-            <div class="info-box">
-                <h2>Winter Schedule</h2>
-                <h3>2026 Pre-Season Training</h3>
-                <p><strong>Period:</strong> January – April 2026</p>
-                <p><strong>Focus:</strong> Indoor nets, fitness &amp; conditioning.</p>
-                <p><strong>Season Start:</strong> Outdoor matches resume May/June.</p>
-            </div>
+        <!-- Info Box 2 -->
+        <div class="info-box">
+            <h2>Live Cricket Headlines</h2>
 
-            <div class="info-box">
-                <h2>Live Cricket Headlines</h2>
-                <div id="rss-feed-container">
-                    <p>Loading latest news...</p>
-                </div>
+            <div id="rss-feed-container">
+                <p>Loading latest updates...</p>
             </div>
         </div>
-    </section>
 
-    <!-- SPONSORS -->
-    <section class="sponsors-section">
-        <div class="container">
-            <h2 class="section-title">Our Sponsors</h2>
-            <p class="sponsor-intro">
-                We are proud to be supported by local businesses that believe in building a strong cricket community in Kingston.
-            </p>
+    </div>
+</section>
 
-            <div class="sponsor-grid">
-                <div class="sponsor-card">
-                    <img src="sponsor1.png" alt="Sponsor 1 logo">
-                </div>
-                <div class="sponsor-card">
-                    <img src="sponsor2.png" alt="Sponsor 2 logo">
-                </div>
+
+
+<!-- ===================================================================
+     SPONSORS — Card Grid + CTA
+     =================================================================== -->
+<section class="sponsors-section">
+    <div class="container">
+
+        <h2 class="section-title">Our Sponsors</h2>
+
+        <p class="sponsor-intro">
+            We are proud to partner with local businesses that support our mission of building a thriving 
+            cricket community in Kingston.
+        </p>
+
+        <div class="sponsor-grid">
+            <div class="sponsor-card">
+                <img src="sponsor1.png" alt="Sponsor 1 logo">
             </div>
-
-            <a href="sponsors.html" class="cta-button outlined">View All Sponsors</a>
+            <div class="sponsor-card">
+                <img src="sponsor2.png" alt="Sponsor 2 logo">
+            </div>
         </div>
-    </section>
+
+        <a href="sponsors.html" class="cta-button outlined">View All Sponsors</a>
+
+    </div>
+</section>
 
 </main>
 
-<!-- ======================================================
+
+
+<!-- ===================================================================
      FOOTER
-     ====================================================== -->
+     =================================================================== -->
 <footer>
     <div class="container">
+
         <div class="social-links">
             <a href="https://www.instagram.com/kingstonunitedcricketclub"
-               target="_blank"
-               rel="noopener noreferrer"
-               title="Follow us on Instagram">
-                <!-- Full Instagram SVG icon -->
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Follow us on Instagram">
+
                 <svg xmlns="http://www.w3.org/2000/svg"
-                     width="24" height="24"
-                     viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069s-3.584-.011-4.85-.069c-3.225-.149-4.771-1.664-4.919-4.919C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85C2.381 3.898 3.924 2.379 7.153 2.231 8.419 2.175 8.799 2.163 12 2.163m0-2.163C8.741 0 8.332.015 7.052.072 2.695.272.272 2.695.072 7.052.015 8.332 0 8.741 0 12c0 3.259.015 3.668.072 4.948.2 4.357 2.623 6.78 6.98 6.98C8.332 23.985 8.741 24 12 24s3.668-.015 4.948-.072c4.357-.2 6.78-2.623 6.98-6.98.057-1.28.072-1.689.072-4.948 0-3.259-.015-3.668-.072-4.948-.2-4.357-2.623-6.78-6.98-6.98C15.668.015 15.259 0 12 0z"/>
-                    <path d="M12 5.838A6.162 6.162 0 1 0 18.162 12 6.173 6.173 0 0 0 12 5.838zm0 10.162A4 4 0 1 1 16 12a4.005 4.005 0 0 1-4 4z"/>
-                    <circle cx="18.406" cy="5.594" r="1.44"/>
+                     width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.20 ..."></path>
                 </svg>
             </a>
         </div>
+
         <p>&copy; 2025 Kingston United Cricket Club. All Rights Reserved.</p>
+
     </div>
 </footer>
 
-<!-- ======================================================
-     SCRIPTS — NAV + RSS
-     ====================================================== -->
+
+
+<!-- ===================================================================
+     SCRIPTS — Mobile Nav + RSS Loader
+     =================================================================== -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
     const navToggle = document.querySelector(".nav-toggle");
-    const mobileNav = document.getElementById("primary-mobile-nav");
-    const body = document.body;
+    const mobileNav = document.getElementById("mobileNav");
 
-    if (navToggle && mobileNav) {
-        const toggleMenu = () => {
-            const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
-            navToggle.setAttribute("aria-expanded", String(!isExpanded));
-            mobileNav.classList.toggle("is-active");
-            body.classList.toggle("no-scroll");
-        };
+    navToggle.addEventListener("click", () => {
+        const isOpen = navToggle.getAttribute("aria-expanded") === "true";
 
-        navToggle.addEventListener("click", toggleMenu);
+        navToggle.setAttribute("aria-expanded", String(!isOpen));
+        mobileNav.classList.toggle("is-active");
+        document.body.classList.toggle("no-scroll");
+    });
 
-        // Close menu when a mobile link is clicked
-        mobileNav.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", () => {
-                if (mobileNav.classList.contains("is-active")) {
-                    toggleMenu();
-                }
-            });
+    mobileNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileNav.classList.remove("is-active");
+            navToggle.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("no-scroll");
         });
-    }
-});
+    });
 </script>
 
+
+<!-- RSS FEED LOADER (ESPN Cricinfo) -->
 <script>
-// RSS FEED LOADER
-document.addEventListener("DOMContentLoaded", function() {
-    const feedContainer = document.getElementById("rss-feed-container");
-    if (!feedContainer) return;
+    document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById("rss-feed-container");
+        if (!container) return;
 
-    const rssFeedUrl = "https://www.espncricinfo.com/rss/content/story/feeds/0.xml";
-    const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssFeedUrl)}`;
+        fetch("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.espncricinfo.com/rss/content/story/feeds/0.xml"))
+            .then(r => r.json())
+            .then(data => {
+                if (!data.items) {
+                    container.innerHTML = "<p>Could not load news.</p>";
+                    return;
+                }
 
-    fetch(proxyUrl)
-        .then(res => res.json())
-        .then(data => {
-            if (data.status === "ok" && Array.isArray(data.items)) {
-                feedContainer.innerHTML = "";
                 const list = document.createElement("ul");
                 list.className = "rss-feed-list";
 
@@ -234,15 +260,13 @@ document.addEventListener("DOMContentLoaded", function() {
                     list.appendChild(li);
                 });
 
-                feedContainer.appendChild(list);
-            } else {
-                feedContainer.innerHTML = "<p>Could not load headlines.</p>";
-            }
-        })
-        .catch(() => {
-            feedContainer.innerHTML = "<p>Could not load headlines.</p>";
-        });
-});
+                container.innerHTML = "";
+                container.appendChild(list);
+            })
+            .catch(() => {
+                container.innerHTML = "<p>Could not load news.</p>";
+            });
+    });
 </script>
 
 </body>

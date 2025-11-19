@@ -2,241 +2,229 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
-    <title>Join Our Club - Kingston United Cricket Club</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join The Club — Kingston United Cricket Club</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="styles.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="container">
-            <a href="index.html" aria-label="Go to homepage" class="logo-link">
-                <img src="logo.png" alt="Kingston United Cricket Club Logo" class="logo">
-            </a>
+<!-- ============================================================
+     PREMIUM HEADER
+     ============================================================ -->
+<header class="site-header">
+    <div class="container header-inner">
 
-            <nav class="desktop-nav" aria-label="Primary navigation">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="#">Fixtures</a></li>
-                    <li><a href="#">Results</a></li>
-                    <li><a href="#">Our Team</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="gear.html">Gear</a></li>
-                    <li><a href="join.html" class="active">Join The Club</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li>
-                        <a href="https://spond.com/invite/OYHMH"
-                           class="nav-button"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                           Member Login
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+        <!-- Brand -->
+        <a href="index.html" class="brand">
+            <img src="logo.png" class="logo" alt="Kingston United Cricket Club Logo" />
 
-            <button class="nav-toggle"
-                    aria-label="Toggle navigation menu"
-                    aria-expanded="false"
-                    aria-controls="mobile-nav">
-                <svg width="24" height="24" viewBox="0 0 24 24"
-                     fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 12H21"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
-                    <path d="M3 6H21"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
-                    <path d="M3 18H21"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
-                </svg>
-            </button>
-        </div>
-    </header>
+            <span class="brand-text">
+                <span class="brand-title">Kingston United</span>
+                <span class="brand-subtitle">Cricket Club</span>
+            </span>
+        </a>
 
-    <!-- MOBILE NAV -->
-    <div id="mobile-nav"
-         class="mobile-nav"
-         role="dialog"
-         aria-modal="true"
-         aria-hidden="true"
-         aria-label="Mobile navigation menu">
-
-        <nav aria-label="Mobile primary navigation">
-            <ul>
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav" aria-label="Main Navigation">
+            <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="#">Fixtures</a></li>
                 <li><a href="#">Results</a></li>
-                <li><a href="#">Our Team</a></li>
+                <li><a href="#">The Team</a></li>
                 <li><a href="#">Gallery</a></li>
                 <li><a href="gear.html">Gear</a></li>
-                <li><a href="join.html" class="active">Join The Club</a></li>
+                <li><a href="join.html" class="active">Join</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li>
                     <a href="https://spond.com/invite/OYHMH"
                        class="nav-button"
                        target="_blank"
                        rel="noopener noreferrer">
-                       Member Login
+                        Member Login
                     </a>
                 </li>
             </ul>
         </nav>
+
+        <!-- Mobile Toggle -->
+        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle Navigation">
+            <span class="nav-toggle-bar"></span>
+        </button>
+
     </div>
+</header>
 
-    <main>
-        <section class="page-header">
-            <div class="container">
-                <h1>Join Our Club</h1>
-                <p class="slogan">Become part of Kingston’s growing cricket family</p>
-            </div>
-        </section>
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" id="mobileNav">
+    <nav aria-label="Mobile Navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Fixtures</a></li>
+            <li><a href="#">Results</a></li>
+            <li><a href="#">The Team</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="gear.html">Gear</a></li>
+            <li><a href="join.html" class="active">Join</a></li>
+            <li><a href="contact.html">Contact</a></li>
 
-        <section class="container content-section">
-            <div class="form-container">
-                <h2>Membership Application</h2>
-
-                <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
-                    We're excited that you're interested in joining Kingston United Cricket Club.
-                    Fill out the form below and our team will reach out with full details on
-                    membership, training schedules, and next steps.
-                </p>
-
-                <form name="join-request" method="POST" data-netlify="true" action="/thank-you.html">
-                    <input type="hidden" name="form-name" value="join-request">
-
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input id="name" name="name" type="text" autocomplete="name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input id="email" name="email" type="email" autocomplete="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input id="phone" name="phone" type="tel" autocomplete="tel">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="city">City / Town</label>
-                        <input id="city" name="city" type="text" placeholder="e.g., Kingston, Belleville" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="experience">Cricketing Experience</label>
-                        <select id="experience" name="experience" required>
-                            <option value="">-- Please select an option --</option>
-                            <option value="Beginner">Beginner (New to cricket)</option>
-                            <option value="School/Youth">Played in school / youth leagues</option>
-                            <option value="Experienced">Experienced club player</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message (Optional)</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tell us a bit about yourself..."></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-button">Send Application</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.instagram.com/kingstonunitedcricketclub"
+            <li>
+                <a href="https://spond.com/invite/OYHMH"
+                   class="nav-button"
                    target="_blank"
-                   rel="noopener noreferrer"
-                   title="Follow us on Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         width="24"
-                         height="24"
-                         viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07
-                        3.252.148 4.771 1.691 4.919 4.919.058
-                        1.265.069 1.645.069 4.85s-.011 3.584-.069
-                        4.85c-.149 3.225-1.664 4.771-4.919
-                        4.919-1.266.058-1.644.069-4.85.069s-3.584-.011-4.85-.069c-3.225-.149-4.771-1.664-4.919-4.919C2.175
-                        15.584 2.163 15.204 2.163
-                        12s.012-3.584.07-4.85C2.38
-                        3.897 3.918 2.378 7.148
-                        2.228 8.416 2.175 8.796 2.163
-                        12 2.163m0-2.163C8.74 0
-                        8.333.014 7.053.072 2.695.272.273 2.69.073
-                        7.052.014 8.333 0 8.74 0 12s.014
-                        3.667.072 4.947c.2 4.358 2.618
-                        6.78 6.98 6.98C8.333 23.986 8.74
-                        24 12 24s3.667-.014 4.947-.072c4.358-.2
-                        6.78-2.618 6.98-6.98C23.986 15.667
-                        24 15.26 24 12s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014
-                        15.26 0 12 0zm0
-                        5.838a6.162 6.162 0 1 0 0
-                        12.324 6.162 6.162 0 0 0 0-12.324zM12
-                        16a4 4 0 1 1 0-8 4 4 0 0
-                        1 0 8zm6.406-11.845a1.44 1.44
-                        0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
-                    </svg>
+                   rel="noopener noreferrer">
+                    Member Login
                 </a>
-            </div>
-            <p>&copy; 2025 Kingston United Cricket Club. All Rights Reserved.</p>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<main>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Join Kingston United</h1>
+            <p class="slogan">Become part of Kingston’s fastest-growing cricket community</p>
         </div>
-    </footer>
+    </section>
 
-    <!-- NAV SCRIPT -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const navToggle = document.querySelector(".nav-toggle");
-            const mobileNav = document.getElementById("mobile-nav");
-            const links = mobileNav.querySelectorAll("a");
 
-            function closeMobileNav() {
-                mobileNav.classList.remove("is-active");
-                mobileNav.setAttribute("aria-hidden", "true");
-                navToggle.setAttribute("aria-expanded", "false");
-                document.body.classList.remove("no-scroll");
-            }
+    <!-- JOIN FORM SECTION -->
+    <section class="container content-section">
 
-            navToggle.addEventListener("click", () => {
-                const isOpen = mobileNav.classList.contains("is-active");
+        <div class="form-container">
 
-                if (isOpen) {
-                    closeMobileNav();
-                } else {
-                    mobileNav.classList.add("is-active");
-                    mobileNav.setAttribute("aria-hidden", "false");
-                    navToggle.setAttribute("aria-expanded", "true");
-                    document.body.classList.add("no-scroll");
-                }
-            });
+            <h2>Membership Application</h2>
 
-            links.forEach(link =>
-                link.addEventListener("click", closeMobileNav)
-            );
+            <p class="form-intro">
+                We’re excited that you want to join Kingston United Cricket Club.
+                Fill out the application below — our team will follow up with membership details,
+                training schedules, and available programs.
+            </p>
+
+            <form name="join-request" method="POST" data-netlify="true" action="/thank-you.html">
+                <input type="hidden" name="form-name" value="join-request">
+
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" required>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required>
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input id="phone" name="phone" type="tel" autocomplete="tel">
+                </div>
+
+                <!-- City -->
+                <div class="form-group">
+                    <label for="city">City / Town</label>
+                    <input id="city" name="city" type="text" placeholder="e.g., Kingston, Belleville" required>
+                </div>
+
+                <!-- Experience -->
+                <div class="form-group">
+                    <label for="experience">Cricketing Experience</label>
+                    <select id="experience" name="experience" required>
+                        <option value="">-- Select an option --</option>
+                        <option value="Beginner">Beginner (New to Cricket)</option>
+                        <option value="School/Youth">School / Youth League</option>
+                        <option value="Experienced">Experienced Club Player</option>
+                    </select>
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                    <label for="message">Message (Optional)</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us a bit about yourself..."></textarea>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="submit-button">Send Application</button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+    <div class="container">
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/kingstonunitedcricketclub"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Follow us on Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="24" height="24"
+                     viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.20 ..."></path>
+                </svg>
+            </a>
+        </div>
+
+        <p>&copy; 2025 Kingston United Cricket Club. All Rights Reserved.</p>
+
+    </div>
+</footer>
+
+
+<!-- ============================================================
+     NAV SCRIPT
+     ============================================================ -->
+<script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const mobileNav = document.getElementById("mobileNav");
+
+    navToggle.addEventListener("click", () => {
+        const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+
+        navToggle.setAttribute("aria-expanded", String(!isOpen));
+        mobileNav.classList.toggle("is-active");
+        document.body.classList.toggle("no-scroll");
+    });
+
+    mobileNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileNav.classList.remove("is-active");
+            navToggle.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("no-scroll");
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
