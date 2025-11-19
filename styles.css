@@ -1,224 +1,656 @@
-/* ============================================
-   ROOT
-============================================ */
-:root {
-    --navy: #0a2342;
-    --gold: #b08a3c;
-    --light-bg: #f5f8fa;
-    --white: #fff;
-    --radius-lg: 22px;
-    --radius-md: 16px;
-    --shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+/* =========================================================
+   Kingston Cricket Club — Premium UI Theme (Refined)
+   Stylesheet: styles.css
+   ========================================================= */
 
-    --heading-font: 'Poppins', sans-serif;
-    --body-font: 'Inter', sans-serif;
+/* ---------------------------------------------------------
+   1. Design Tokens — Colors, Typography, Spacing
+   --------------------------------------------------------- */
+
+:root {
+    /* Brand Color Palette (Pantone → HEX) */
+    --color-navy-296:  #041C2C; /* Pantone 296 C */
+    --color-navy-2955: #003865; /* Pantone 2955 C */
+    --color-blue-7692: #005587; /* Pantone 7692 C */
+    --color-blue-7686: #1D4F91; /* Pantone 7686 C */
+    --color-gold-7560: #7D622E; /* Pantone 7560 C */
+    --color-gold-soft: #A78545; /* Derived lighter gold accent */
+    --color-white:     #FFFFFF;
+
+    /* Neutral Support */
+    --gray-50:  #F7FAFC;
+    --gray-100: #EDF2F7;
+    --gray-200: #E2E8F0;
+    --gray-300: #CBD5E0;
+    --gray-600: #4A5568;
+    --gray-700: #2D3748;
+    --gray-800: #1A202C;
+
+    /* Legacy Variable Backwards Compatibility */
+    --navy-darkest: var(--color-navy-296);
+    --navy-dark:    var(--color-navy-2955);
+    --navy-mid:     var(--color-blue-7686);
+    --gold:         var(--color-gold-7560);
+    --gold-hover:   var(--color-gold-soft);
+    --white:        var(--color-white);
+    --light-gray:   var(--gray-50);
+
+    /* Typography — Fluid */
+    --font-heading: "Poppins", system-ui, sans-serif;
+    --font-body:    "Inter", system-ui, sans-serif;
+
+    --fs-body: clamp(0.95rem, 0.9rem + 0.3vw, 1.05rem);
+    --fs-h1:   clamp(2.1rem, 1.6rem + 2vw, 3.2rem);
+    --fs-h2:   clamp(1.6rem, 1.3rem + 1.3vw, 2.3rem);
+    --fs-h3:   clamp(1.3rem, 1.1rem + 0.9vw, 1.8rem);
+    --fs-h4:   clamp(1.1rem, 1.0rem + 0.4vw, 1.3rem);
+
+    /* Layout Tokens */
+    --max-width: 1200px;
+
+    /* Spacing Scale */
+    --space-2xs: 0.25rem;
+    --space-xs:  0.5rem;
+    --space-sm:  0.75rem;
+    --space-md:  1.25rem;
+    --space-lg:  2rem;
+    --space-xl:  3rem;
+    --space-2xl: 4rem;
+
+    /* Radius Tokens */
+    --radius-xs: 4px;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 22px;
+    --radius-pill: 999px;
+
+    /* Shadows */
+    --shadow-soft:       0 10px 25px rgba(0, 0, 0, 0.08);
+    --shadow-subtle:     0 4px 12px rgba(0, 0, 0, 0.06);
+    --shadow-layered-lg: 0 18px 40px rgba(0, 0, 0, 0.35);
+
+    /* Transitions */
+    --transition-fast: 0.18s ease-out;
+    --transition-med:  0.28s ease-out;
+
+    /* Header */
+    --header-height: 90px;
+
+    /* Overlays */
+    --overlay-navy-soft: rgba(4, 28, 44, 0.8);
+    --overlay-navy-strong: rgba(4, 28, 44, 0.95);
+    --overlay-gold-soft: rgba(125, 98, 46, 0.14);
 }
 
-/* ============================================
-   GLOBAL
-============================================ */
+/* ---------------------------------------------------------
+   2. Global Base Styles
+   --------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: var(--body-font);
-    background: var(--light-bg);
-    color: #222;
+    font-family: var(--font-body);
+    color: var(--gray-800);
+    background-color: var(--gray-50);
+    line-height: 1.7;
+    font-size: var(--fs-body);
+    -webkit-font-smoothing: antialiased;
 }
 
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 24px;
+.no-scroll {
+    overflow: hidden;
 }
 
-h1, h2, h3 {
-    font-family: var(--heading-font);
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--navy-darkest);
+    margin-top: 0;
+    letter-spacing: 0.03em;
+}
+
+h1 { font-size: var(--fs-h1); line-height: 1.1; }
+h2 { font-size: var(--fs-h2); line-height: 1.2; }
+h3 { font-size: var(--fs-h3); line-height: 1.25; }
+h4 { font-size: var(--fs-h4); }
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--gray-700);
 }
 
 a {
+    color: var(--color-blue-7686);
     text-decoration: none;
-    color: inherit;
+    transition: color var(--transition-fast);
 }
 
-/* ============================================
-   HEADER
-============================================ */
+a:hover,
+a:focus-visible {
+    color: var(--gold);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+/* Layout utility */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+section,
+.content-section,
+.featured-info {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+}
+
+/* ---------------------------------------------------------
+   3. HEADER & NAVIGATION (GLASS PREMIUM)
+   --------------------------------------------------------- */
+
 .site-header {
-    background: var(--white);
-    padding: 14px 0;
-    border-bottom: 1px solid #e7e7e7;
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 1000;
+    padding: 6px 0;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(4, 28, 44, 0.96) 0%,
+            rgba(0, 56, 101, 0.96) 55%,
+            rgba(0, 85, 135, 0.98) 100%
+        );
+    color: var(--white);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .header-inner {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    min-height: var(--header-height);
+    gap: 32px;
 }
 
 .brand {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 12px;
-}
-
-.brand-text .brand-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-}
-
-.brand-text .brand-subtitle {
-    font-size: 0.85rem;
-    opacity: 0.7;
+    gap: 14px;
+    text-decoration: none;
 }
 
 .logo {
-    height: 58px;
+    height: 80px;
+    width: auto;
+    display: block;
 }
 
-/* Desktop Nav */
-.desktop-nav .nav-list {
-    list-style: none;
+.brand-text {
     display: flex;
-    gap: 22px;
-    padding: 0;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.brand-subtitle {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+/* Desktop nav */
+.desktop-nav {
+    flex: 1;
+}
+
+.nav-list {
+    list-style: none;
     margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 26px;
+    justify-content: flex-end;
 }
 
-.desktop-nav a {
-    padding: 6px 4px;
+.nav-list a {
+    position: relative;
+    color: var(--white);
     font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
 }
 
-/* Mobile Toggle */
+.nav-list a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(90deg, var(--gold), var(--color-blue-7692));
+    transition: width var(--transition-med);
+}
+
+.nav-list a:hover::after,
+.nav-list a.active::after {
+    width: 100%;
+}
+
+.nav-button {
+    background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+    color: var(--navy-darkest) !important;
+    padding: 8px 18px !important;
+    border-radius: var(--radius-pill);
+}
+
+.nav-button:hover {
+    background: linear-gradient(135deg, var(--gold-hover), var(--gold));
+}
+
+/* Mobile toggle */
 .nav-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     display: none;
-    background: none;
-    border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
-.nav-toggle-bar {
-    width: 24px;
-    height: 3px;
-    background: var(--navy);
-    display: block;
-    border-radius: 4px;
-}
-
-/* MOBILE NAV */
-.mobile-nav {
-    display: none;
-}
-
-.mobile-nav.is-active {
-    display: block;
+.nav-toggle-bar,
+.nav-toggle-bar::before,
+.nav-toggle-bar::after {
+    width: 20px;
+    height: 2px;
     background: var(--white);
-    padding: 24px;
+    border-radius: 999px;
+    transition: transform var(--transition-fast);
 }
 
-@media (max-width: 900px) {
-    .desktop-nav { display: none; }
-    .nav-toggle { display: block; }
+.nav-toggle-bar::before {
+    content: "";
+    position: absolute;
+    top: -6px;
 }
 
-/* ============================================
-   HERO
-============================================ */
+.nav-toggle-bar::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar {
+    background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar::before {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar::after {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ---------------------------------------------------------
+   4. HERO SECTION
+   --------------------------------------------------------- */
+
 .hero {
-    padding: 80px 0;
+    background: radial-gradient(circle at top left, var(--color-blue-7686), var(--navy-darkest));
+    color: var(--white);
     text-align: center;
+    padding: calc(var(--space-xl) + 30px) 0 var(--space-xl);
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.04), transparent),
+        radial-gradient(circle at top center, rgba(125, 98, 46, 0.18), transparent);
 }
 
 .hero h1 {
-    font-size: 2.8rem;
+    color: var(--gold);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-xs);
 }
 
-.tagline {
+.hero .tagline {
     font-size: 1.2rem;
-    margin-top: 12px;
-    opacity: 0.8;
+    margin-bottom: var(--space-md);
 }
 
+.hero .welcome-text {
+    max-width: 780px;
+    margin: 0 auto var(--space-lg);
+    color: var(--gray-100);
+    font-size: 1rem;
+}
+
+/* CTA button */
 .cta-button {
-    display: inline-block;
-    margin-top: 22px;
-    background: var(--gold);
+    background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+    color: var(--navy-darkest);
+    padding: 14px 30px;
+    border-radius: var(--radius-pill);
+    font-weight: 700;
+    box-shadow: var(--shadow-layered-lg);
+    display: inline-flex;
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, var(--gold-hover), var(--gold));
+}
+
+/* ---------------------------------------------------------
+   5. FEATURED INFO / CARDS
+   --------------------------------------------------------- */
+
+.featured-info {
+    background: linear-gradient(180deg, var(--gray-50), var(--gray-100));
+}
+
+.featured-info .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: var(--space-lg);
+}
+
+.info-box {
+    background: white;
+    padding: 24px 24px 28px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+}
+
+.info-box::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: -40px;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(125, 98, 46, 0.22), transparent);
+}
+
+.info-box h2 {
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gold);
+}
+
+/* ---------------------------------------------------------
+   6. PAGE HEADER
+   --------------------------------------------------------- */
+
+.page-header {
+    background: linear-gradient(135deg, var(--navy-darkest), var(--navy-mid), var(--color-blue-7692));
     color: var(--white);
-    padding: 12px 28px;
-    border-radius: 50px;
+    padding: 48px 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    margin: 0;
+    color: var(--gold);
+    text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------
+   7. CONTENT SECTIONS
+   --------------------------------------------------------- */
+
+.content-section {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ---------------------------------------------------------
+   8. FORMS
+   --------------------------------------------------------- */
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 40px 32px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--gray-50), var(--white), var(--gray-50));
+    border: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-soft);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--gray-300);
+}
+
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+    border-radius: var(--radius-pill);
     font-weight: 700;
 }
 
-.cta-button.outlined {
-    background: transparent;
-    color: var(--navy);
-    border: 2px solid var(--gold);
-}
+/* ---------------------------------------------------------
+   9. SPONSORS — FIXED & IMPROVED
+   --------------------------------------------------------- */
 
-/* ============================================
-   SPONSORS GRID
-============================================ */
-.sponsor-section,
-.sponsors-section {
-    padding: 80px 0;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 12px;
-}
-
-.sponsor-intro {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto 40px auto;
-    opacity: 0.85;
-}
-
-/* ⭐ AUTO-COLLAPSING GRID */
+/* Homepage sponsors grid */
 .sponsor-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    justify-items: center;
 }
 
-/* CARD */
+/* Sponsors page grid */
+.sponsor-grid.page {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* Sponsor card – universal */
 .sponsor-card {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
+    background: white;
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft);
+    width: 100%;
+    max-width: 340px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sponsor-card.large {
+    padding: 32px;
+    max-width: 480px;
 }
 
 .sponsor-card img {
-    max-width: 200px;
-    max-height: 120px;
+    width: auto;
+    max-width: 100%;
+    max-height: 160px;
     object-fit: contain;
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
 }
 
 .sponsor-card h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 0.6rem;
+    margin: 10px 0;
+    color: var(--navy-darkest);
 }
 
 .sponsor-card p {
-    font-size: 1rem;
-    opacity: 0.8;
-    margin-bottom: 1rem;
+    color: var(--gray-700);
+    margin-bottom: 18px;
 }
 
-/* FOOTER */
+.sponsor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-subtle);
+}
+
+/* Center a single sponsor card */
+.sponsor-grid:only-child,
+.sponsor-grid.page:only-child,
+.sponsor-grid:has(.sponsor-card:nth-child(1)):not(:has(.sponsor-card:nth-child(2))) {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+}
+
+/* CTA button inside sponsor card */
+.cta-button.small {
+    font-size: 0.85rem;
+    padding: 10px 18px;
+}
+
+/* ---------------------------------------------------------
+   10. SWIPER / PRODUCT CARDS
+   --------------------------------------------------------- */
+
+.swiper-container {
+    max-width: 900px;
+    padding: 10px 0 40px;
+}
+
+.product-card img {
+    max-height: 300px;
+    border-radius: var(--radius-md);
+}
+
+/* ---------------------------------------------------------
+   11. FOOTER
+   --------------------------------------------------------- */
+
 footer {
-    padding: 40px 0;
+    background: linear-gradient(180deg, var(--navy-mid), var(--navy-darkest));
     text-align: center;
-    background: var(--white);
-    margin-top: 60px;
+    padding: 32px 0;
+    color: var(--white);
+}
+
+.social-links svg {
+    width: 26px;
+    height: 26px;
+}
+
+/* ---------------------------------------------------------
+   12. MOBILE NAVIGATION
+   --------------------------------------------------------- */
+
+.mobile-nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--navy-darkest);
+    padding: 30px 24px;
+    opacity: 0;
+    transform: translateY(-12px);
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity var(--transition-med), transform var(--transition-med);
+}
+
+.mobile-nav.is-active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.mobile-nav nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+}
+
+/* ---------------------------------------------------------
+   13. RESPONSIVE BREAKPOINTS
+   --------------------------------------------------------- */
+
+@media (max-width: 992px) {
+    .desktop-nav {
+        display: none;
+    }
+    .nav-toggle {
+        display: inline-flex;
+    }
+    .brand-text {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .nav-toggle {
+        margin-left: auto;
+    }
+    .logo {
+        height: 64px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-button {
+        width: 100%;
+    }
+    .logo {
+        height: 60px;
+    }
 }
