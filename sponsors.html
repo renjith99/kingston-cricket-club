@@ -8,18 +8,15 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link 
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
-        rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-<!-- ============================================================== -->
-<!-- HEADER (Unified with index.html — NO regressions) -->
-<!-- ============================================================== -->
+<!-- ============================= HEADER ============================= -->
 <header class="site-header">
     <div class="container header-inner">
 
@@ -42,26 +39,23 @@
                 <li><a href="gear.html">Gear</a></li>
                 <li><a href="join.html">Join</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="sponsors.html" class="active">Sponsors</a></li>
+                <li><a class="active" href="sponsors.html">Sponsors</a></li>
                 <li>
-                    <a href="https://spond.com/invite/OYHMH"
-                       class="nav-button"
-                       target="_blank"
-                       rel="noopener noreferrer">Member Login</a>
+                    <a href="https://spond.com/invite/OYHMH" class="nav-button" target="_blank" rel="noopener noreferrer">
+                        Member Login
+                    </a>
                 </li>
             </ul>
         </nav>
 
-        <button class="nav-toggle" aria-label="Open Menu" aria-expanded="false">
+        <button class="nav-toggle" aria-label="Toggle Menu" aria-expanded="false">
             <span class="nav-toggle-bar"></span>
         </button>
 
     </div>
 </header>
 
-<!-- ============================================================== -->
-<!-- MOBILE NAV -->
-<!-- ============================================================== -->
+<!-- ============================= MOBILE NAV ============================= -->
 <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true">
     <nav aria-label="Mobile Navigation">
         <ul>
@@ -74,20 +68,15 @@
             <li><a href="gear.html">Gear</a></li>
             <li><a href="join.html">Join</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="sponsors.html" class="active">Sponsors</a></li>
+            <li><a class="active" href="sponsors.html">Sponsors</a></li>
             <li>
-                <a href="https://spond.com/invite/OYHMH" 
-                   class="nav-button" 
-                   target="_blank"
-                   rel="noopener noreferrer">Member Login</a>
+                <a href="https://spond.com/invite/OYHMH" class="nav-button" target="_blank">Member Login</a>
             </li>
         </ul>
     </nav>
 </div>
 
-<!-- ============================================================== -->
-<!-- PAGE HEADER -->
-<!-- ============================================================== -->
+<!-- ============================= PAGE HEADER ============================= -->
 <section class="page-header">
     <div class="container">
         <h1>Our Sponsors</h1>
@@ -95,9 +84,7 @@
     </div>
 </section>
 
-<!-- ============================================================== -->
-<!-- MAIN CONTENT -->
-<!-- ============================================================== -->
+<!-- ============================= MAIN CONTENT ============================= -->
 <main class="container content-section">
 
     <p class="sponsor-intro">
@@ -105,30 +92,17 @@
         and our mission to build a strong sports community in Kingston.
     </p>
 
-    <!-- ========================================================== -->
-    <!-- SPONSOR GRID (Option B1: Manual Compatibility Mode) -->
-    <!-- Only ONE sponsor now -->
-    <!-- ========================================================== -->
     <div class="sponsor-grid one-sponsor">
-
         <div class="sponsor-card">
-            <img src="D George-Business Card.png" 
-                 alt="Deepak George — Referral Mortgages" />
-
+            <img src="D George-Business Card.png" alt="Deepak George — Referral Mortgages" />
             <h3>Deepak George</h3>
-
             <p>Mortgage Agent — Referral Mortgages</p>
-
-            <a href="https://www.referralmortgages.com" 
-               class="cta-button small" 
-               target="_blank">
+            <a href="https://www.referralmortgages.com" class="cta-button small" target="_blank" rel="noopener noreferrer">
                 Visit Website
             </a>
         </div>
-
     </div>
 
-    <!-- Become a Sponsor Box -->
     <div class="become-sponsor-box">
         <h2>Become a Sponsor</h2>
         <p>
@@ -140,39 +114,18 @@
 
 </main>
 
-<!-- ============================================================== -->
-<!-- FOOTER (Corrected SVG — FULL PATH, NO truncation) -->
-<!-- ============================================================== -->
+<!-- ============================= FOOTER ============================= -->
 <footer>
     <div class="container">
-        <div class="social-links">
-            <a href="https://www.instagram.com/kingstonunitedcricketclub" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               title="Follow us on Instagram">
 
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     width="24" height="24"
-                     viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07
-                        3.252.148 4.771 1.691 4.919 4.919.058
-                        1.265.069 1.645.069 4.85s-.011 3.584-.069
-                        4.85c-.149 3.225-1.664 4.771-4.919
-                        4.919-1.266.058-1.644.069-4.85.069s-3.584-.011-4.85-.069c-3.225-.149-4.771-1.664-4.919-4.919C2.175
-                        15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85C2.381
-                        3.898 3.924 2.379 7.153 2.231 8.419 2.175 8.799
-                        2.163 12 2.163m0-2.163C8.741 0 8.332.015 7.052.072
-                        2.695.272.272 2.695.072 7.052.015 8.332 0 8.741 0
-                        12c0 3.259.015 3.668.072 4.948.2 4.357 2.623
-                        6.78 6.98 6.98C8.332 23.985 8.741 24 12
-                        24s3.668-.015 4.948-.072c4.357-.2 6.78-2.623
-                        6.98-6.98.057-1.28.072-1.689.072-4.948 0-3.259-.015-3.668-.072-4.948-.2-4.357-2.623-6.78-6.98-6.98C15.668.015 15.259 0 12 0z"/>
-                    <path d="M12 5.838A6.162 6.162 0 1 0 18.162
-                        12 6.173 6.173 0 0 0 12 5.838zm0
-                        10.162A4 4 0 1 1 16 12a4.005 4.005 0 0 1-4 4z"/>
+        <div class="social-links">
+            <a href="https://www.instagram.com/kingstonunitedcricketclub" target="_blank" rel="noopener noreferrer" title="Follow us on Instagram">
+                <!-- CLEAN, FLAT, SAFARI-FRIENDLY SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069s-3.584-.011-4.85-.069c-3.225-.149-4.771-1.664-4.919-4.919C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85C2.38 3.898 3.924 2.379 7.153 2.231 8.419 2.175 8.799 2.163 12 2.163m0-2.163C8.741 0 8.332.015 7.053.072 2.695.272.272 2.69.072 7.052.015 8.332 0 8.741 0 12c0 3.259.015 3.668.072 4.948.2 4.357 2.623 6.78 6.98 6.98C8.332 23.985 8.741 24 12 24s3.668-.015 4.948-.072c4.357-.2 6.78-2.623 6.98-6.98.057-1.28.072-1.689.072-4.948 0-3.259-.015-3.668-.072-4.948-.2-4.357-2.623-6.78-6.98-6.98C15.668.015 15.259 0 12 0z"/>
+                    <path d="M12 5.838A6.162 6.162 0 1 0 18.162 12 6.173 6.173 0 0 0 12 5.838zm0 10.162A4 4 0 1 1 16 12a4.005 4.005 0 0 1-4 4z"/>
                     <circle cx="18.406" cy="5.594" r="1.44"/>
                 </svg>
-
             </a>
         </div>
 
@@ -180,16 +133,14 @@
     </div>
 </footer>
 
-<!-- ============================================================== -->
-<!-- JS — Mobile Navigation -->
-<!-- ============================================================== -->
+<!-- ============================= JS ============================= -->
 <script>
     const navToggle = document.querySelector(".nav-toggle");
     const mobileNav = document.getElementById("mobileNav");
 
     navToggle.addEventListener("click", () => {
-        const open = navToggle.getAttribute("aria-expanded") === "true";
-        navToggle.setAttribute("aria-expanded", String(!open));
+        const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!isOpen));
         mobileNav.classList.toggle("is-active");
         document.body.classList.toggle("no-scroll");
     });

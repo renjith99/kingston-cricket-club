@@ -6,36 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Join The Club — Kingston United Cricket Club</title>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link 
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
-        rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
 
-    <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-<!-- ============================================================
-     HEADER
-============================================================ -->
 <header class="site-header">
     <div class="container header-inner">
 
-        <!-- Brand -->
-        <a href="index.html" class="brand">
+        <a href="index.html" class="brand" aria-label="Kingston United Cricket Club">
             <img src="logo.png" class="logo" alt="Kingston United Cricket Club Logo" />
             <span class="brand-text">
-                <span class="brand-title">Kingston United<br>Cricket Club</span>
-                <span class="brand-subtitle">Est. 2024</span>
+                <span class="brand-title">Kingston United</span>
+                <span class="brand-subtitle">Cricket Club</span>
             </span>
         </a>
 
-        <!-- Desktop Navigation -->
         <nav class="desktop-nav" aria-label="Main Navigation">
             <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
@@ -45,20 +35,20 @@
                 <li><a href="#">The Team</a></li>
                 <li><a href="#">Gallery</a></li>
                 <li><a href="gear.html">Gear</a></li>
-                <li><a href="join.html" class="active">Join</a></li>
+                <li><a class="active" href="join.html">Join</a></li>
                 <li><a href="contact.html">Contact</a></li>
+
                 <li>
                     <a href="https://spond.com/invite/OYHMH"
                        class="nav-button"
                        target="_blank"
                        rel="noopener noreferrer">
-                        Member Login
+                       Member Login
                     </a>
                 </li>
             </ul>
         </nav>
 
-        <!-- Mobile Toggle -->
         <button class="nav-toggle" aria-expanded="false" aria-label="Toggle Navigation">
             <span class="nav-toggle-bar"></span>
         </button>
@@ -66,7 +56,7 @@
     </div>
 </header>
 
-<!-- Mobile Navigation Drawer -->
+
 <div class="mobile-nav" id="mobileNav">
     <nav aria-label="Mobile Navigation">
         <ul>
@@ -77,7 +67,7 @@
             <li><a href="#">The Team</a></li>
             <li><a href="#">Gallery</a></li>
             <li><a href="gear.html">Gear</a></li>
-            <li><a href="join.html" class="active">Join</a></li>
+            <li><a class="active" href="join.html">Join</a></li>
             <li><a href="contact.html">Contact</a></li>
 
             <li>
@@ -85,7 +75,7 @@
                    class="nav-button"
                    target="_blank"
                    rel="noopener noreferrer">
-                    Member Login
+                   Member Login
                 </a>
             </li>
         </ul>
@@ -93,12 +83,8 @@
 </div>
 
 
-<!-- ============================================================
-     MAIN CONTENT
-============================================================ -->
 <main>
 
-    <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
             <h1>Join Kingston United</h1>
@@ -107,7 +93,6 @@
     </section>
 
 
-    <!-- JOIN FORM -->
     <section class="container content-section">
 
         <div class="form-container">
@@ -123,31 +108,26 @@
             <form name="join-request" method="POST" data-netlify="true" action="/thank-you.html">
                 <input type="hidden" name="form-name" value="join-request">
 
-                <!-- Full Name -->
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input id="name" name="name" type="text" autocomplete="name" required>
                 </div>
 
-                <!-- Email -->
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input id="email" name="email" type="email" autocomplete="email" required>
                 </div>
 
-                <!-- Phone -->
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
                     <input id="phone" name="phone" type="tel" autocomplete="tel">
                 </div>
 
-                <!-- City -->
                 <div class="form-group">
                     <label for="city">City / Town</label>
                     <input id="city" name="city" type="text" placeholder="e.g., Kingston, Belleville" required>
                 </div>
 
-                <!-- Experience -->
                 <div class="form-group">
                     <label for="experience">Cricketing Experience</label>
                     <select id="experience" name="experience" required>
@@ -158,13 +138,11 @@
                     </select>
                 </div>
 
-                <!-- Message -->
                 <div class="form-group">
                     <label for="message">Message (Optional)</label>
                     <textarea id="message" name="message" rows="5" placeholder="Tell us a bit about yourself..."></textarea>
                 </div>
 
-                <!-- Submit -->
                 <button type="submit" class="submit-button">Send Application</button>
 
             </form>
@@ -176,37 +154,21 @@
 </main>
 
 
-<!-- ============================================================
-     FOOTER
-============================================================ -->
 <footer>
     <div class="container">
 
         <div class="social-links">
             <a href="https://www.instagram.com/kingstonunitedcricketclub"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Follow us on Instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" 
-                     width="24" height="24" 
-                     viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 
-                    3.252.148 4.771 1.691 4.919 4.919.058 
-                    1.265.069 1.645.069 4.85s-.011 3.584-.069 
-                    4.85c-.149 3.225-1.664 4.771-4.919 
-                    4.919-1.266.058-1.644.069-4.85.069s-3.584-.011-4.85-.069c-3.225-.149-4.771-1.664-4.919-4.919C2.175 
-                    15.584 2.163 15.204 2.163 
-                    12s.012-3.584.07-4.85C2.381 3.898 3.924 2.379 7.153 2.231 
-                    8.419 2.175 8.799 2.163 12 2.163m0-2.163C8.741 0 8.332.015 7.052.072 
-                    2.695.272.272 2.695.072 7.052.015 8.332 0 8.741 0 12c0 3.259.015 3.668.072 4.948 
-                    .2 4.357 2.623 6.78 6.98 6.98C8.332 23.985 8.741 24 12 24s3.668-.015 
-                    4.948-.072c4.357-.2 6.78-2.623 6.98-6.98.057-1.28.072-1.689.072-4.948 
-                    0-3.259-.015-3.668-.072-4.948-.2-4.357-2.623-6.78-6.98-6.98C15.668.015 
-                    15.259 0 12 0z"/>
-                    <path d="M12 5.838A6.162 6.162 0 1 0 18.162 12 6.173 6.173 0 0 0 12 5.838zm0 
-                    10.162A4 4 0 1 1 16 12a4.005 4.005 0 0 1-4 4z"/>
+               target="_blank"
+               rel="noopener noreferrer"
+               title="Follow us on Instagram">
+
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069s-3.584-.011-4.85-.069c-3.225-.149-4.771-1.664-4.919-4.919C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85C2.38 3.897 3.918 2.378 7.148 2.228 8.416 2.175 8.796 2.163 12 2.163m0-2.163C8.74 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.74 24 12 24s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98C23.986 15.667 24 15.26 24 12s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.26 0 12 0z"/>
+                    <path d="M12 5.838A6.162 6.162 0 1 0 18.162 12 6.173 6.173 0 0 0 12 5.838zm0 10.162A4 4 0 1 1 16 12a4.005 4.005 0 0 1-4 4z"/>
                     <circle cx="18.406" cy="5.594" r="1.44"/>
                 </svg>
+
             </a>
         </div>
 
@@ -216,9 +178,6 @@
 </footer>
 
 
-<!-- ============================================================
-     MOBILE NAV SCRIPT
-============================================================ -->
 <script>
     const navToggle = document.querySelector(".nav-toggle");
     const mobileNav = document.getElementById("mobileNav");

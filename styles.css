@@ -50,9 +50,12 @@
 
     --shadow-soft: 0 10px 25px rgba(0,0,0,0.08);
     --shadow-header: 0 8px 30px rgba(0,0,0,0.35);
+    --shadow-subtle: 0 4px 12px rgba(0,0,0,0.06);
 
     --max-width: 1200px;
     --header-height: 90px;
+
+    color-scheme: light;
 }
 
 /* ---------------------------------------------------------
@@ -64,6 +67,8 @@
 *::after {
     box-sizing: border-box;
 }
+
+html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
@@ -83,6 +88,7 @@ h1,h2,h3,h4 {
 a {
     color: var(--color-blue-7692);
     text-decoration: none;
+    transition: color .2s ease;
 }
 a:hover { color: var(--gold); }
 
@@ -107,6 +113,7 @@ a:hover { color: var(--gold); }
         rgba(0,85,135,0.98)
     );
     backdrop-filter: blur(14px);
+    background-color: rgba(4,28,44,0.90); /* fallback */
     box-shadow: var(--shadow-header);
     padding: 6px 0;
 }
@@ -119,15 +126,9 @@ a:hover { color: var(--gold); }
     gap: 20px;
 }
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-.logo {
-    height: 80px;
-    width: auto;
-}
+.brand { display: flex; align-items: center; gap: 12px; }
+.logo { height: 80px; width: auto; }
+
 .brand-text {
     display: flex;
     flex-direction: column;
@@ -157,13 +158,13 @@ a:hover { color: var(--gold); }
     text-transform: uppercase;
     letter-spacing: 0.12em;
     font-weight: 600;
-    position: relative;
 }
 .nav-list a:hover,
 .nav-list a.active {
     color: var(--gold);
 }
 
+/* Member Login Button */
 .nav-button {
     background: linear-gradient(135deg,var(--gold),var(--gold-hover));
     color: var(--navy-darkest) !important;
@@ -172,7 +173,7 @@ a:hover { color: var(--gold); }
     white-space: nowrap;
 }
 
-/* MOBILE NAV */
+/* MOBILE NAV TOGGLE */
 
 .nav-toggle {
     display: none;
@@ -184,6 +185,7 @@ a:hover { color: var(--gold); }
     align-items: center;
     justify-content: center;
 }
+
 .nav-toggle-bar,
 .nav-toggle-bar::before,
 .nav-toggle-bar::after {
@@ -207,6 +209,8 @@ a:hover { color: var(--gold); }
     transform: translateY(-6px) rotate(-45deg);
 }
 
+/* MOBILE NAV PANEL */
+
 .mobile-nav {
     position: fixed;
     top: var(--header-height);
@@ -218,6 +222,7 @@ a:hover { color: var(--gold); }
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.25s ease;
+    will-change: transform, opacity;
 }
 .mobile-nav.is-active {
     opacity: 1;
@@ -238,6 +243,7 @@ a:hover { color: var(--gold); }
     text-transform: uppercase;
     font-size: 1.05rem;
 }
+
 
 /* ---------------------------------------------------------
    4. HERO
@@ -267,6 +273,7 @@ a:hover { color: var(--gold); }
     max-width: 800px;
     margin: 0 auto;
 }
+
 .cta-button {
     background: linear-gradient(135deg,var(--gold),var(--gold-hover));
     padding: 14px 30px;
@@ -274,7 +281,9 @@ a:hover { color: var(--gold); }
     display: inline-block;
     color: var(--navy-darkest);
     font-weight: 700;
+    transition: transform 0.2s ease;
 }
+.cta-button:hover { transform: translateY(-3px); }
 
 /* ---------------------------------------------------------
    5. FEATURED INFO
@@ -301,6 +310,7 @@ a:hover { color: var(--gold); }
     top:-30px; right:-40px;
     width:140px; height:140px;
     background: radial-gradient(circle,rgba(125,98,46,0.22),transparent);
+    pointer-events:none;
 }
 
 /* ---------------------------------------------------------
@@ -316,7 +326,7 @@ a:hover { color: var(--gold); }
 .page-header h1 { color: var(--gold); }
 
 /* ---------------------------------------------------------
-   7. FORMS (RESTORED)
+   7. FORMS
    --------------------------------------------------------- */
 
 .form-container {
@@ -328,10 +338,7 @@ a:hover { color: var(--gold); }
     box-shadow: var(--shadow-soft);
 }
 
-/* --- RESTORED BLOCK --- */
-.form-group { 
-    margin-bottom: 20px; 
-}
+.form-group { margin-bottom: 20px; }
 
 .form-group label {
     font-weight: 600;
@@ -363,12 +370,11 @@ a:hover { color: var(--gold); }
 }
 
 /* ---------------------------------------------------------
-   8. SPONSORS — SAFE MODE (Option B1)
+   8. SPONSORS
    --------------------------------------------------------- */
 
 .sponsors-section {
     padding: var(--space-xl) 0;
-    background: var(--gray-50);
 }
 
 .sponsor-grid {
@@ -379,7 +385,6 @@ a:hover { color: var(--gold); }
     margin-top: 30px;
 }
 
-/* --- SAFE MANUAL UTILITY CLASS (NO :has()) --- */
 .sponsor-grid.one-sponsor {
     grid-template-columns: 1fr;
     max-width: 420px;
@@ -402,7 +407,7 @@ a:hover { color: var(--gold); }
 }
 
 /* ---------------------------------------------------------
-   9. FOOTER (RESTORED ICON STYLES)
+   9. FOOTER
    --------------------------------------------------------- */
 
 footer {
@@ -412,13 +417,12 @@ footer {
     padding: 32px 0;
 }
 
-/* --- RESTORED BLOCK --- */
 footer .social-links svg {
     width: 26px;
     height: 26px;
     fill: white;
     margin: 0 10px;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, fill 0.2s ease;
 }
 
 footer .social-links svg:hover {
@@ -448,11 +452,11 @@ footer .social-links svg:hover {
         width: 100%;
     }
 }
-/* =========================================================
-   11. ABOUT PAGE STYLES (Add to bottom of styles.css)
-   ========================================================= */
 
-/* Intro Text */
+/* ---------------------------------------------------------
+   11. ABOUT PAGE STYLES
+   --------------------------------------------------------- */
+
 .about-intro {
     font-size: 1.2rem;
     text-align: center;
@@ -463,7 +467,6 @@ footer .social-links svg:hover {
     line-height: 1.6;
 }
 
-/* Section Headings */
 .about-section {
     margin-bottom: var(--space-xl);
 }
@@ -474,7 +477,6 @@ footer .social-links svg:hover {
     margin-bottom: 24px;
 }
 
-/* Values List (Cards) */
 .values-list {
     list-style: none;
     padding: 0;
@@ -493,6 +495,7 @@ footer .social-links svg:hover {
 }
 
 /* Leadership Grid */
+
 .leadership-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -527,18 +530,19 @@ footer .social-links svg:hover {
     margin: 0;
     line-height: 1.6;
 }
-/* =========================================================
-   12. GEAR CAROUSEL STYLES (Add to bottom of styles.css)
-   ========================================================= */
+
+/* ---------------------------------------------------------
+   12. GEAR CAROUSEL
+   --------------------------------------------------------- */
 
 .swiper-container {
     width: 100%;
-    padding-bottom: 50px; /* Space for pagination dots */
-    overflow: hidden; /* Hides slides off-screen */
+    padding-bottom: 50px;
+    overflow: hidden;
 }
 
 .swiper-slide {
-    height: auto; /* Ensures equal height cards */
+    height: auto;
 }
 
 .product-card {
@@ -563,6 +567,7 @@ footer .social-links svg:hover {
     width: 100%;
     height: 220px;
     object-fit: cover;
+    aspect-ratio: 1/1;
     background: var(--gray-50);
 }
 
@@ -578,7 +583,7 @@ footer .social-links svg:hover {
     margin: 0;
     color: var(--gray-600);
     font-size: 0.9rem;
-    flex-grow: 1; /* Pushes button to bottom */
+    flex-grow: 1;
 }
 
 .product-card .cta-button {
@@ -589,7 +594,6 @@ footer .social-links svg:hover {
     letter-spacing: 0.05em;
 }
 
-/* Custom Swiper Controls (Gold Theme) */
 .swiper-pagination-bullet-active {
     background: var(--gold) !important;
 }
