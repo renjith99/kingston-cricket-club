@@ -21,18 +21,17 @@
 <body>
 
 <!-- ============================================================
-     PREMIUM HEADER
-     ============================================================ -->
+     HEADER
+============================================================ -->
 <header class="site-header">
     <div class="container header-inner">
 
         <!-- Brand -->
         <a href="index.html" class="brand">
             <img src="logo.png" class="logo" alt="Kingston United Cricket Club Logo" />
-
             <span class="brand-text">
-                <span class="brand-title">Kingston United</span>
-                <span class="brand-subtitle">Cricket Club</span>
+                <span class="brand-title">Kingston United<br>Cricket Club</span>
+                <span class="brand-subtitle">Est. 2024</span>
             </span>
         </a>
 
@@ -96,7 +95,7 @@
 
 <!-- ============================================================
      MAIN CONTENT
-     ============================================================ -->
+============================================================ -->
 <main>
 
     <!-- PAGE HEADER -->
@@ -108,14 +107,14 @@
     </section>
 
 
-    <!-- JOIN FORM SECTION -->
+    <!-- JOIN FORM -->
     <section class="container content-section">
 
         <div class="form-container">
 
             <h2>Membership Application</h2>
 
-            <p class="form-intro">
+            <p class="form-intro" style="text-align:center; max-width:720px; margin:0 auto 24px;">
                 We’re excited that you want to join Kingston United Cricket Club.
                 Fill out the application below — our team will follow up with membership details,
                 training schedules, and available programs.
@@ -179,7 +178,7 @@
 
 <!-- ============================================================
      FOOTER
-     ============================================================ -->
+============================================================ -->
 <footer>
     <div class="container">
 
@@ -188,10 +187,25 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Follow us on Instagram">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     width="24" height="24"
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                     width="24" height="24" 
                      viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.20 ..."></path>
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 
+                    3.252.148 4.771 1.691 4.919 4.919.058 
+                    1.265.069 1.645.069 4.85s-.011 3.584-.069 
+                    4.85c-.149 3.225-1.664 4.771-4.919 
+                    4.919-1.266.058-1.644.069-4.85.069s-3.584-.011-4.85-.069c-3.225-.149-4.771-1.664-4.919-4.919C2.175 
+                    15.584 2.163 15.204 2.163 
+                    12s.012-3.584.07-4.85C2.381 3.898 3.924 2.379 7.153 2.231 
+                    8.419 2.175 8.799 2.163 12 2.163m0-2.163C8.741 0 8.332.015 7.052.072 
+                    2.695.272.272 2.695.072 7.052.015 8.332 0 8.741 0 12c0 3.259.015 3.668.072 4.948 
+                    .2 4.357 2.623 6.78 6.98 6.98C8.332 23.985 8.741 24 12 24s3.668-.015 
+                    4.948-.072c4.357-.2 6.78-2.623 6.98-6.98.057-1.28.072-1.689.072-4.948 
+                    0-3.259-.015-3.668-.072-4.948-.2-4.357-2.623-6.78-6.98-6.98C15.668.015 
+                    15.259 0 12 0z"/>
+                    <path d="M12 5.838A6.162 6.162 0 1 0 18.162 12 6.173 6.173 0 0 0 12 5.838zm0 
+                    10.162A4 4 0 1 1 16 12a4.005 4.005 0 0 1-4 4z"/>
+                    <circle cx="18.406" cy="5.594" r="1.44"/>
                 </svg>
             </a>
         </div>
@@ -203,15 +217,14 @@
 
 
 <!-- ============================================================
-     NAV SCRIPT
-     ============================================================ -->
+     MOBILE NAV SCRIPT
+============================================================ -->
 <script>
     const navToggle = document.querySelector(".nav-toggle");
     const mobileNav = document.getElementById("mobileNav");
 
     navToggle.addEventListener("click", () => {
         const isOpen = navToggle.getAttribute("aria-expanded") === "true";
-
         navToggle.setAttribute("aria-expanded", String(!isOpen));
         mobileNav.classList.toggle("is-active");
         document.body.classList.toggle("no-scroll");

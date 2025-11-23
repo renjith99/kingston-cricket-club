@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,61 +16,19 @@
 
 <body>
 
-    <!-- ===========================
-         PREMIUM HEADER + NAV
-    ============================ -->
-    <header class="site-header">
-        <div class="container header-inner">
+<!-- HEADER -->
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="index.html" class="brand" aria-label="Kingston United Cricket Club">
+            <img src="logo.png" class="logo" alt="Kingston United Cricket Club Logo">
+            <span class="brand-text">
+                <span class="brand-title">Kingston United</span>
+                <span class="brand-subtitle">Cricket Club</span>
+            </span>
+        </a>
 
-            <!-- Brand (Logo + text) -->
-            <a href="index.html" class="brand" aria-label="Kingston United Cricket Club">
-                <img src="logo.png" class="logo" alt="Kingston United Cricket Club Logo">
-                <span class="brand-text">
-                    <span class="brand-title">Kingston United<br>Cricket Club</span>
-                    <span class="brand-subtitle">Est. 2024</span>
-                </span>
-            </a>
-
-            <!-- Desktop Navigation -->
-            <nav class="desktop-nav" aria-label="Main Navigation">
-                <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="#">Fixtures</a></li>
-                    <li><a href="#">Results</a></li>
-                    <li><a href="#">Our Team</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="gear.html">Gear</a></li>
-                    <li><a href="join.html">Join</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-
-                    <li>
-                        <a href="https://spond.com/invite/OYHMH"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="nav-button">
-                           Member Login
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <!-- Mobile Toggle -->
-            <button class="nav-toggle"
-                    aria-label="Toggle navigation"
-                    aria-expanded="false">
-                <span class="nav-toggle-bar"></span>
-            </button>
-
-        </div>
-    </header>
-
-    <!-- ===========================
-         MOBILE NAV DRAWER
-    ============================ -->
-    <div class="mobile-nav" id="mobileNav">
-        <nav aria-label="Mobile Menu">
-            <ul>
+        <nav class="desktop-nav">
+            <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a class="active" href="about.html">About</a></li>
                 <li><a href="#">Fixtures</a></li>
@@ -81,210 +38,235 @@
                 <li><a href="gear.html">Gear</a></li>
                 <li><a href="join.html">Join</a></li>
                 <li><a href="contact.html">Contact</a></li>
-
                 <li>
                     <a href="https://spond.com/invite/OYHMH"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="nav-button">
-                       Member Login
+                        class="nav-button" target="_blank" rel="noopener noreferrer">
+                        Member Login
                     </a>
                 </li>
             </ul>
         </nav>
+
+        <button class="nav-toggle" aria-expanded="false">
+            <span class="nav-toggle-bar"></span>
+        </button>
+    </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="about.html">About</a></li>
+            <li><a href="#">Fixtures</a></li>
+            <li><a href="#">Results</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="gear.html">Gear</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="https://spond.com/invite/OYHMH" class="nav-button" target="_blank">
+                    Member Login
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<main>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+    <div class="container">
+        <h1>About Our Club</h1>
+        <p class="slogan">Pride in Tradition, Grace in Play.</p>
+    </div>
+</section>
+
+<section class="content-section">
+
+    <!-- INTRO -->
+    <div class="about-intro">
+        <p>
+            Building a united cricket family in Kingston — where passion meets discipline,
+            and every player finds their place.
+        </p>
     </div>
 
-    <main>
+    <!-- HISTORY -->
+    <section class="about-section">
+        <h2>Our History</h2>
+        <p>
+            Kingston United Cricket Club was founded with the vision of bringing passionate
+            cricketers together to form Kingston’s most unified and disciplined leather-ball
+            cricket community.
+        </p>
+        <p>
+            Our members represent diverse cultures and backgrounds, but we are united by
+            our shared love for the sport and our commitment to nurturing a strong,
+            inclusive cricketing culture.
+        </p>
+    </section>
 
-        <!-- ===========================
-             PAGE HEADER
-        ============================ -->
-        <section class="page-header">
-            <div class="container">
-                <h1>About Our Club</h1>
-                <p class="slogan">Pride in Tradition, Grace in Play.</p>
-            </div>
-        </section>
+    <!-- VALUES -->
+    <section class="about-section">
+        <h2>Our Mission & Values</h2>
 
-        <!-- ===========================
-             ABOUT INTRO
-        ============================ -->
-        <section class="content-section">
-            <div class="about-intro">
+        <p>
+            Our mission is to develop talent, instill discipline, and offer a structured pathway
+            for cricketers in Kingston. We believe in:
+        </p>
+
+        <ul class="values-list">
+            <li><strong>Respect:</strong> Every individual deserves dignity and fairness.</li>
+            <li><strong>Teamwork:</strong> We win together, grow together, and learn together.</li>
+            <li><strong>Excellence:</strong> Commitment to improvement in training, fitness, and match performance.</li>
+            <li><strong>Inclusion:</strong> Welcoming players of all ages, backgrounds, and skill levels.</li>
+        </ul>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section class="about-section">
+        <h2>Meet the Leadership</h2>
+
+        <div class="leadership-grid">
+
+            <!-- BOARD OF DIRECTORS -->
+            <article class="leader-profile">
+                <h3>Board of Directors</h3>
                 <p>
-                    Building a united cricket family in Kingston — where passion meets discipline,
-                    and every player finds their place.
+                    A formal governing body overseeing long-term strategic and administrative
+                    leadership for Kingston United Cricket Club.
                 </p>
-            </div>
+                <p><em>(Names will be added after official registration)</em></p>
+            </article>
 
-            <!-- ===========================
-                 HISTORY
-            ============================ -->
-            <section class="about-section">
-                <h2>Our History</h2>
-
+            <!-- MANAGER -->
+            <article class="leader-profile">
+                <h3>Manager — Renjith</h3>
                 <p>
-                    Kingston United Cricket Club was founded with a vision to bring passionate players together
-                    under one banner. What began as a small idea to build a true leather-ball cricket club has grown
-                    into one of Kingston’s most disciplined cricket communities.
+                    Responsible for planning, logistics, match scheduling, and smooth operations —
+                    from training sessions to ground bookings.
                 </p>
+            </article>
 
+            <!-- CAPTAIN -->
+            <article class="leader-profile">
+                <h3>Captain — Kishore</h3>
                 <p>
-                    Our members come from diverse backgrounds, cultures, and regions — yet the spirit of cricket
-                    unites us. We are committed to building a cricketing culture that supports youth development,
-                    respects tradition, and creates unforgettable experiences on and off the field.
+                    Leads with tactical awareness, motivation, and passion — setting the competitive
+                    standard on and off the field.
                 </p>
-            </section>
+            </article>
 
-            <!-- ===========================
-                 VALUES
-            ============================ -->
-            <section class="about-section">
-                <h2>Our Mission & Values</h2>
-
+            <!-- VICE CAPTAIN -->
+            <article class="leader-profile">
+                <h3>Vice-Captain — Hamza</h3>
                 <p>
-                    Our mission is simple: to nurture talent, build discipline, and offer a structured pathway
-                    for cricketers in Kingston. We believe in:
+                    Supports team leadership, discipline, and ensures continuity in match strategy
+                    and squad balance.
                 </p>
+            </article>
 
-                <ul class="values-list">
-                    <li><strong>Respect:</strong> Every player, opponent, and supporter deserves dignity on and off the field.</li>
-                    <li><strong>Teamwork:</strong> We win together, learn together, and grow together.</li>
-                    <li><strong>Excellence:</strong> From training to match days, we strive to raise the bar every single day.</li>
-                    <li><strong>Inclusion:</strong> Our club reflects Kingston’s diversity and welcomes players of all backgrounds and skill levels.</li>
+            <!-- COACH -->
+            <article class="leader-profile">
+                <h3>Coach & Mentor — Noman</h3>
+                <p>
+                    Architect of our training programs — focusing on discipline, technique,
+                    conditioning, and mentorship.
+                </p>
+            </article>
+
+            <!-- MEDIA -->
+            <article class="leader-profile">
+                <h3>Media & Onboarding — Joemon</h3>
+                <p>
+                    Manages outreach, social media, branding stories, and new member onboarding —
+                    shaping the voice of Kingston United.
+                </p>
+            </article>
+
+            <!-- CREATIVE DIRECTOR -->
+            <article class="leader-profile">
+                <h3>Creative Director — Brand & Kit Design — Jinith</h3>
+                <p>
+                    Leads the club’s visual identity and branding excellence.
+                </p>
+                <p><strong>Responsible for:</strong></p>
+                <ul>
+                    <li>Jersey & kit design</li>
+                    <li>Logo usage and consistency</li>
+                    <li>Brand colors, typography, and style standards</li>
+                    <li>Merchandise quality and vendor coordination</li>
+                    <li>Ensuring a premium, professional visual presence</li>
                 </ul>
-            </section>
+            </article>
 
-            <!-- ===========================
-                 LEADERSHIP GRID
-            ============================ -->
-            <section class="about-section">
-                <h2>Meet the Leadership</h2>
-
-                <div class="leadership-grid">
-
-                    <article class="leader-profile">
-                        <h3>Directors</h3>
-                        <p>
-                            A dedicated group of leaders providing the long-term vision, structure, and governance
-                            behind Kingston United Cricket Club.
-                        </p>
-                    </article>
-
-                    <article class="leader-profile">
-                        <h3>Manager — Renjith</h3>
-                        <p>
-                            Oversees planning, logistics, scheduling, and ensures that all club operations
-                            run like clockwork — from ground bookings to training sessions.
-                        </p>
-                    </article>
-
-                    <article class="leader-profile">
-                        <h3>Captain — Kishore</h3>
-                        <p>
-                            Leads the team on and off the field with strategy, motivation, and a relentless
-                            drive for performance excellence.
-                        </p>
-                    </article>
-
-                    <article class="leader-profile">
-                        <h3>Vice-Captain — Hamza</h3>
-                        <p>
-                            Supports team balance, mindset, and discipline, stepping up whenever the situation demands.
-                        </p>
-                    </article>
-
-                    <article class="leader-profile">
-                        <h3>Coach & Mentor — Noman</h3>
-                        <p>
-                            Designs training programs, mentors players, and is the club’s guiding force for discipline,
-                            technique, conditioning, and professionalism.
-                        </p>
-                    </article>
-
-                    <article class="leader-profile">
-                        <h3>Media & Onboarding — Joemon</h3>
-                        <p>
-                            The voice of Kingston United — managing social media, outreach, and welcoming new members
-                            into the club community.
-                        </p>
-                    </article>
-
-                </div>
-            </section>
-
-        </section>
-    </main>
-
-    <!-- ===========================
-         FOOTER
-    ============================ -->
-    <footer>
-        <div class="container">
-
-            <div class="social-links">
-                <a href="https://www.instagram.com/kingstonunitedcricketclub"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   title="Follow us on Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         width="24" height="24" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07
-                        3.252.148 4.771 1.691 4.919 4.919.058
-                        1.265.069 1.645.069 4.85s-.011 3.584-.069
-                        4.85c-.149 3.225-1.664 4.771-4.919
-                        4.919-1.266.058-1.644.069-4.85.069s-3.584-.011-4.85-.069c-3.225-.149-4.771-1.664-4.919-4.919C2.175
-                        15.584 2.163 15.204 2.163
-                        12s.012-3.584.07-4.85C2.38
-                        3.897 3.918 2.378 7.148
-                        2.228 8.416 2.175 8.796 2.163
-                        12 2.163m0-2.163C8.74 0
-                        8.333.014 7.053.072 2.695.272.273 2.69.073
-                        7.052.014 8.333 0 8.74 0 12s.014
-                        3.667.072 4.947c.2 4.358 2.618
-                        6.78 6.98 6.98C8.333 23.986 8.74
-                        24 12 24s3.667-.014 4.947-.072c4.358-.2
-                        6.78-2.618 6.98-6.98C23.986 15.667
-                        24 15.26 24 12s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014
-                        15.26 0 12 0zm0
-                        5.838a6.162 6.162 0 1 0 0
-                        12.324 6.162 6.162 0 0 0 0-12.324zM12
-                        16a4 4 0 1 1 0-8 4 4 0 0
-                        1 0 8zm6.406-11.845a1.44 1.44
-                        0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
-                    </svg>
-                </a>
-            </div>
-
-            <p>&copy; 2025 Kingston United Cricket Club. All Rights Reserved.</p>
         </div>
-    </footer>
+    </section>
 
+</section>
+</main>
 
-    <!-- ===========================
-         MOBILE NAV SCRIPT
-    ============================ -->
-    <script>
-        const navToggle = document.querySelector(".nav-toggle");
-        const mobileNav = document.getElementById("mobileNav");
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="social-links">
+            <a href="https://www.instagram.com/kingstonunitedcricketclub" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                     viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07
+                    3.252.148 4.771 1.691 4.919 4.919.058
+                    1.265.069 1.645.069 4.85s-.011 3.584-.069
+                    4.85c-.149 3.225-1.664 4.771-4.919
+                    4.919-1.266.058-1.644.069-4.85.069s-3.584-.011-4.85-.069c-3.225-.149-4.771-1.664-4.919-4.919C2.175
+                    15.584 2.163 15.204 2.163
+                    12s.012-3.584.07-4.85C2.38
+                    3.897 3.918 2.378 7.148
+                    2.228 8.416 2.175 8.796 2.163
+                    12 2.163m0-2.163C8.74 0
+                    8.333.014 7.053.072 2.695.272.273 2.69.073
+                    7.052.014 8.333 0 8.74 0 12s.014
+                    3.667.072 4.947c.2 4.358 2.618
+                    6.78 6.98 6.98C8.333 23.986 8.74
+                    24 12 24s3.667-.014 4.947-.072c4.358-.2
+                    6.78-2.618 6.98-6.98C23.986 15.667
+                    24 15.26 24 12s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014
+                    15.26 0 12 0zm0
+                    5.838a6.162 6.162 0 1 0 0
+                    12.324 6.162 6.162 0 0 0 0-12.324zM12
+                    16a4 4 0 1 1 0-8 4 4 0 0
+                    1 0 8zm6.406-11.845a1.44 1.44
+                    0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
+                </svg>
+            </a>
+        </div>
+        <p>&copy; 2025 Kingston United Cricket Club. All Rights Reserved.</p>
+    </div>
+</footer>
 
-        navToggle.addEventListener("click", () => {
-            const expanded = navToggle.getAttribute("aria-expanded") === "true";
+<!-- NAV SCRIPT -->
+<script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const mobileNav = document.getElementById("mobileNav");
 
-            navToggle.setAttribute("aria-expanded", String(!expanded));
-            mobileNav.classList.toggle("is-active");
-            document.body.classList.toggle("no-scroll");
+    navToggle.addEventListener("click", () => {
+        const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!isOpen));
+        mobileNav.classList.toggle("is-active");
+        document.body.classList.toggle("no-scroll");
+    });
+
+    mobileNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileNav.classList.remove("is-active");
+            navToggle.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("no-scroll");
         });
-
-        // Close mobile menu when clicking any link
-        mobileNav.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", () => {
-                mobileNav.classList.remove("is-active");
-                navToggle.setAttribute("aria-expanded", "false");
-                document.body.classList.remove("no-scroll");
-            });
-        });
-    </script>
+    });
+</script>
 
 </body>
 </html>
