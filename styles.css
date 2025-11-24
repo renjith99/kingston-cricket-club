@@ -223,6 +223,10 @@ a:hover { color: var(--gold); }
     transform: translateY(-10px);
     transition: all 0.25s ease;
     will-change: transform, opacity;
+    
+    /* === FIX: ADD THIS LINE === */
+    z-index: 990; 
+    /* This ensures it sits ABOVE the text but BELOW the header */
 }
 .mobile-nav.is-active {
     opacity: 1;
