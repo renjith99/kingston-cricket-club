@@ -6,7 +6,7 @@
   "navigation": [
     { "label": "Home", "url": "index.html", "type": "link" },
     { "label": "About", "url": "about.html", "type": "link" },
-    { "label": "Fixtures", "url": "#", "type": "link" },
+    { "label": "Fixtures", "url": "fixtures.html", "type": "link" },
     { "label": "Gear", "url": "gear.html", "type": "link" },
     { "label": "Join", "url": "join.html", "type": "link" },
     { "label": "Contact", "url": "contact.html", "type": "link" },
