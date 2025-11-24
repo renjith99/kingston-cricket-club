@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "name": "Kingston United",
+    "logo": "logo.png"
+  },
+  "navigation": [
+    { "label": "Home", "url": "index.html", "type": "link" },
+    { "label": "About", "url": "about.html", "type": "link" },
+    { "label": "Fixtures", "url": "#", "type": "link" },
+    { "label": "The Team", "url": "#", "type": "link" },
+    { "label": "Gear", "url": "gear.html", "type": "link" },
+    { "label": "Join", "url": "join.html", "type": "link" },
+    { "label": "Contact", "url": "contact.html", "type": "link" },
+    { "label": "Sponsors", "url": "sponsors.html", "type": "link" },
+    { "label": "Member Login", "url": "https://spond.com/invite/OYHMH", "type": "cta" }
+  ],
+  "hero": {
+    "headline": "United by Passion.<br>Driven by Teamwork.",
+    "subheadline": "Kingston’s fastest-growing leather-ball cricket community. Committed to performance, discipline, and skill development.",
+    "ctaText": "Join The Squad",
+    "ctaLink": "join.html"
+  },
+  "sponsors": [
+    {
+      "name": "Deepak George - Referral Mortgages",
+      "image": "D George-Business Card.png",
+      "link": "https://www.referralmortgages.com",
+      "tier": "gold"
+    }
+  ],
+  "footer": {
+    "copyright": "2025 Kingston United Cricket Club",
+    "socials": [
+      { "platform": "Instagram", "url": "https://www.instagram.com/kingstonunitedcricketclub" }
+    ]
+  }
+}
