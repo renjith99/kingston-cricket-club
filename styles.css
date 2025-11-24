@@ -342,11 +342,25 @@
     }
     
     .partner-logo-wrapper {
-        background: white; padding: 2rem; height: 200px;
-        display: flex; align-items: center; justify-content: center;
+        background: white; 
+        /* REMOVED fixed height: 200px */
+        /* REMOVED padding: 2rem */
+        padding: 0; /* Let the image touch the edges */
+        width: 100%;
+        aspect-ratio: 16/9; /* Forces a nice cinematic widescreen shape */
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
         border-bottom: 1px solid rgba(255,255,255,0.1);
+        overflow: hidden;
     }
-    .partner-logo-wrapper img { max-height: 100%; object-fit: contain; }
+    
+    .partner-logo-wrapper img { 
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Ensures the whole card is visible without cropping */
+        object-position: center;
+    }
     
     .partner-info { padding: 2rem; display: flex; flex-direction: column; flex-grow: 1; }
     .partner-info h3 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.25rem; }
