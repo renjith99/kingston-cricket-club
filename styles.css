@@ -523,7 +523,12 @@
    --------------------------------------------------------- */
 @media (max-width: 768px) {
     .nav-links { display: none; }
-    .hidden-mobile { display: none; }
+    .hidden-mobile { 
+        display: inline-block; /* Brings the text back */
+        font-size: 0.95rem;    /* Slightly smaller font to fit mobile screens */
+        white-space: nowrap;   /* Prevents it from breaking into two lines */
+        margin-left: 0.25rem;  /* Tweak spacing if needed */
+    }
     .mobile-toggle { display: block; background: none; border: none; z-index: 1001; cursor: pointer; }
     .hero-h1 { font-size: 3rem; }
     
