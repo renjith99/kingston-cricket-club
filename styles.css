@@ -1,6 +1,6 @@
 /* =========================================================
    KINGSTON UNITED — TIER 1 MASTER STYLESHEET
-   Version: 2.0 (Full Production)
+   Version: 2.1 (SVG Arrows Update)
    ========================================================= */
 
 @layer reset, tokens, layout, components, utilities;
@@ -411,6 +411,41 @@
     .swiper-button-next, .swiper-button-prev { color: var(--kucc-gold); }
     .swiper-pagination-bullet-active { background: var(--kucc-gold); }
     .swiper-controls { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; }
+
+    /* --- FIX: REPLACE TEXT WITH SVG ARROWS --- */
+
+    /* 1. Hide the fallback text ("prev", "next") */
+    .swiper-button-next::after, 
+    .swiper-button-prev::after {
+        content: "" !important;
+        font-family: none !important;
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    /* 2. Inject a Gold Chevron (Right) */
+    .swiper-button-next::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E4A010' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+    }
+
+    /* 3. Inject a Gold Chevron (Left) */
+    .swiper-button-prev::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E4A010' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='15 18 9 12 15 6'%3E%3C/polyline%3E%3C/svg%3E");
+    }
+
+    /* 4. Mobile Tweak: Ensure they don't overlap content */
+    @media (max-width: 768px) {
+        .swiper-button-next, .swiper-button-prev {
+            width: 30px; /* Smaller touch target to avoid overlap */
+            background-color: rgba(0, 38, 62, 0.8); /* Dark background for visibility */
+            border-radius: 50%;
+            backdrop-filter: blur(4px);
+        }
+    }
 
     /* --- ABOUT / LEADERSHIP --- */
     .value-grid {
