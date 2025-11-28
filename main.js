@@ -26,16 +26,20 @@ function initApp(data) {
     }
 }
 
-// --- HELPER: SAFE URL SANITIZER ---
+// --- HELPER: SAFE URL SANITIZER (Updated for Relative Paths) ---
 function sanitizeUrl(url) {
-    const stringUrl = String(url);
-    if (/^(http|https|mailto|\/|#)/i.test(stringUrl)) {
-        return stringUrl;
+    const stringUrl = String(url).trim();
+    
+    // 1. Block dangerous protocols explicitly
+    if (/^\s*(javascript|data|vbscript):/i.test(stringUrl)) {
+        console.warn(`Blocked unsafe URL: ${stringUrl}`);
+        return '#';
     }
-    console.warn(`Blocked unsafe URL: ${stringUrl}`);
-    return '#';
-}
 
+    // 2. Allow http, https, mailto, tel, absolute paths (/), anchors (#), and relative paths
+    // If it doesn't start with a dangerous protocol, we treat it as safe for this architecture.
+    return stringUrl;
+}
 // --- 1. DESKTOP NAVIGATION ---
 function renderNavigation(navItems) {
     const desktopList = document.querySelector('.nav-links');
