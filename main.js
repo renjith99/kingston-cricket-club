@@ -13,6 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => {
             console.error('Error loading config:', error);
         });
+
+    // SECURITY UPGRADE 3: Initialize Third-Party Scripts internally
+    // This removes the need for inline scripts in HTML, satisfying Strict CSP.
+    initGearSlider();
 });
 
 function initApp(data) {
@@ -26,7 +30,7 @@ function initApp(data) {
     }
 }
 
-// --- HELPER: SAFE URL SANITIZER (Updated for Relative Paths) ---
+// --- HELPER: SAFE URL SANITIZER (Permissive Mode) ---
 function sanitizeUrl(url) {
     const stringUrl = String(url).trim();
     
@@ -37,9 +41,9 @@ function sanitizeUrl(url) {
     }
 
     // 2. Allow http, https, mailto, tel, absolute paths (/), anchors (#), and relative paths
-    // If it doesn't start with a dangerous protocol, we treat it as safe for this architecture.
     return stringUrl;
 }
+
 // --- 1. DESKTOP NAVIGATION ---
 function renderNavigation(navItems) {
     const desktopList = document.querySelector('.nav-links');
@@ -58,7 +62,7 @@ function renderNavigation(navItems) {
         if (item.type === 'cta') {
             a.className = 'btn-cta';
             a.target = "_blank";
-            a.rel = "noopener noreferrer"; // SECURITY UPGRADE 3: Anti-Tabnabbing
+            a.rel = "noopener noreferrer"; // Anti-Tabnabbing
         } else {
             a.className = 'nav-link';
             if (item.url === currentPath) {
@@ -130,8 +134,8 @@ function renderHero(heroData) {
     const p = document.querySelector('.hero-sub');
     const cta = document.querySelector('.hero-cta');
 
-    // SECURITY UPGRADE 4: textContent ONLY (FINAL FIX)
-    // We now use CSS (white-space: pre-line) to handle the line breaks
+    // SECURITY UPGRADE: textContent ONLY
+    // Uses CSS (white-space: pre-line) to handle line breaks from JSON
     if(h1) h1.textContent = heroData.headline; 
     
     if(p) p.textContent = heroData.subheadline;
@@ -206,4 +210,29 @@ function renderFooter(footerData) {
     container.appendChild(socialDiv);
     container.appendChild(copyP);
     footer.appendChild(container);
+}
+
+// --- 6. SWIPER INITIALIZATION (Secure Logic) ---
+function initGearSlider() {
+    // Only attempt to run if the slider element exists on this page
+    const sliderElement = document.querySelector('.gear-slider');
+    
+    if (sliderElement && typeof Swiper !== 'undefined') {
+        new Swiper('.gear-slider', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            grabCursor: true,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            breakpoints: {
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+            }
+        });
+        console.log("Swiper initialized via Main Engine.");
+    } else if (sliderElement && typeof Swiper === 'undefined') {
+        console.error("Swiper JS failed to load via CDN. Check SRI Hash.");
+    }
 }
