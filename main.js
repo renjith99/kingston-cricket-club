@@ -1,23 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Fetch Configuration
-    fetch('data.json')
-        .then(response => response.json())
+    // SECURITY UPGRADE 1: Cache Busting
+    fetch(`data.json?v=${Date.now()}`) 
+        .then(response => {
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+            return response.json();
+        })
         .then(data => {
+            // SECURITY UPGRADE 2: Data Integrity Check
+            if (!data.navigation || !data.hero) throw new Error("Invalid JSON structure");
             initApp(data);
         })
-        .catch(error => console.error('Error loading config:', error));
+        .catch(error => {
+            console.error('Error loading config:', error);
+        });
 });
 
 function initApp(data) {
     renderNavigation(data.navigation);
-    renderMobileMenu(data.navigation); // NEW: Builds the mobile drawer
+    renderMobileMenu(data.navigation);
     renderFooter(data.footer);
     
-    // Only run these if we are on the Home Page
     if (document.querySelector('.hero-section')) {
         renderHero(data.hero);
         renderSponsors(data.sponsors);
     }
+}
+
+// --- HELPER: SAFE URL SANITIZER ---
+function sanitizeUrl(url) {
+    const stringUrl = String(url);
+    if (/^(http|https|mailto|\/|#)/i.test(stringUrl)) {
+        return stringUrl;
+    }
+    console.warn(`Blocked unsafe URL: ${stringUrl}`);
+    return '#';
 }
 
 // --- 1. DESKTOP NAVIGATION ---
@@ -32,15 +48,15 @@ function renderNavigation(navItems) {
         const li = document.createElement('li');
         const a = document.createElement('a');
         
-        a.href = item.url;
+        a.href = sanitizeUrl(item.url);
         a.textContent = item.label;
         
         if (item.type === 'cta') {
             a.className = 'btn-cta';
             a.target = "_blank";
+            a.rel = "noopener noreferrer"; // SECURITY UPGRADE 3: Anti-Tabnabbing
         } else {
             a.className = 'nav-link';
-            // Active State Logic
             if (item.url === currentPath) {
                 a.classList.add('active');
             }
@@ -51,52 +67,51 @@ function renderNavigation(navItems) {
     });
 }
 
-// --- 2. MOBILE MENU LOGIC (The Drawer) ---
+// --- 2. MOBILE MENU LOGIC ---
 function renderMobileMenu(navItems) {
     const toggleBtn = document.querySelector('.mobile-toggle');
     if(!toggleBtn) return;
 
-    // Create the Mobile Panel HTML
     const mobilePanel = document.createElement('div');
     mobilePanel.className = 'mobile-nav-panel';
-    mobilePanel.innerHTML = `<ul class="mobile-drawer-list"></ul>`;
-    document.body.appendChild(mobilePanel);
-
-    const list = mobilePanel.querySelector('ul');
-
-    // Populate Links
+    
+    const ul = document.createElement('ul');
+    ul.className = 'mobile-drawer-list';
+    
     navItems.forEach(item => {
         const li = document.createElement('li');
         const a = document.createElement('a');
-        a.href = item.url;
+        
+        a.href = sanitizeUrl(item.url);
         a.textContent = item.label;
+        
         if(item.type === 'cta') a.style.color = 'var(--kucc-gold)';
         
-        // Close menu on click
         a.addEventListener('click', () => {
             mobilePanel.classList.remove('active');
             document.body.style.overflow = '';
         });
 
         li.appendChild(a);
-        list.appendChild(li);
+        ul.appendChild(li);
     });
+
+    mobilePanel.appendChild(ul);
+    document.body.appendChild(mobilePanel);
 
     // Toggle Logic
     toggleBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         const isActive = mobilePanel.classList.contains('active');
-        
         if (isActive) {
             mobilePanel.classList.remove('active');
-            document.body.style.overflow = ''; // Enable scroll
+            document.body.style.overflow = '';
         } else {
             mobilePanel.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Lock scroll
+            document.body.style.overflow = 'hidden';
         }
     });
 
-    // Close on click outside
     document.addEventListener('click', (e) => {
         if (mobilePanel.classList.contains('active') && !mobilePanel.contains(e.target) && !toggleBtn.contains(e.target)) {
             mobilePanel.classList.remove('active');
@@ -111,11 +126,15 @@ function renderHero(heroData) {
     const p = document.querySelector('.hero-sub');
     const cta = document.querySelector('.hero-cta');
 
-    if(h1) h1.innerHTML = heroData.headline; 
-    if(p) p.innerHTML = heroData.subheadline;
+    // SECURITY UPGRADE 4: textContent ONLY (FINAL FIX)
+    // We now use CSS (white-space: pre-line) to handle the line breaks
+    if(h1) h1.textContent = heroData.headline; 
+    
+    if(p) p.textContent = heroData.subheadline;
+    
     if(cta) {
         cta.textContent = heroData.ctaText;
-        cta.href = heroData.ctaLink;
+        cta.href = sanitizeUrl(heroData.ctaLink);
     }
 }
 
@@ -131,15 +150,16 @@ function renderSponsors(sponsors) {
         card.className = 'sponsor-card';
         
         const img = document.createElement('img');
-        img.src = sponsor.image;
+        img.src = sanitizeUrl(sponsor.image);
         img.alt = sponsor.name;
         img.style.marginBottom = '1rem';
         
         const link = document.createElement('a');
-        link.href = sponsor.link;
+        link.href = sanitizeUrl(sponsor.link);
         link.className = 'btn-text';
-        link.textContent = 'Visit Partner \u2192'; // Arrow symbol
+        link.textContent = 'Visit Partner \u2192'; 
         link.target = "_blank";
+        link.rel = "noopener noreferrer";
         
         card.appendChild(img);
         card.appendChild(link);
@@ -152,12 +172,34 @@ function renderFooter(footerData) {
     const footer = document.querySelector('.site-footer');
     if(!footer) return;
 
-    footer.innerHTML = `
-        <div class="container" style="text-align: center; padding: 2rem 0; color: rgba(255,255,255,0.5); font-size: 0.9rem;">
-            <div style="margin-bottom: 1rem;">
-                <a href="${footerData.socials[0].url}" target="_blank" style="color: white; font-weight: 600;">Instagram</a>
-            </div>
-            <p>&copy; ${footerData.copyright}</p>
-        </div>
-    `;
+    // Building DOM elements safely (No innerHTML)
+    footer.innerHTML = ''; 
+    
+    const container = document.createElement('div');
+    container.className = 'container';
+    container.style.textAlign = 'center';
+    container.style.padding = '2rem 0';
+    container.style.color = 'rgba(255,255,255,0.5)';
+    container.style.fontSize = '0.9rem';
+
+    // Social Link
+    const socialDiv = document.createElement('div');
+    socialDiv.style.marginBottom = '1rem';
+    
+    const socialLink = document.createElement('a');
+    socialLink.href = sanitizeUrl(footerData.socials[0].url);
+    socialLink.target = "_blank";
+    socialLink.rel = "noopener noreferrer";
+    socialLink.style.color = 'white';
+    socialLink.style.fontWeight = '600';
+    socialLink.textContent = 'Instagram';
+    
+    socialDiv.appendChild(socialLink);
+    
+    const copyP = document.createElement('p');
+    copyP.textContent = `© ${footerData.copyright}`;
+
+    container.appendChild(socialDiv);
+    container.appendChild(copyP);
+    footer.appendChild(container);
 }

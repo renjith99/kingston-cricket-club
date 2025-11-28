@@ -215,6 +215,8 @@
         -webkit-background-clip: text;
         color: transparent;
         animation: fadeUp 1s ease-out;
+        /* SECURITY FIX: Respect Newlines from JSON */
+        white-space: pre-line; 
     }
 
     .hero-sub {
