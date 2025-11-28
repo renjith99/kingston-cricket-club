@@ -15,8 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     // SECURITY UPGRADE 3: Initialize Third-Party Scripts internally
-    // This removes the need for inline scripts in HTML, satisfying Strict CSP.
     initGearSlider();
+
+    // SECURITY UPGRADE 4: Initialize RSS Feed internally
+    initRSSFeed();
 });
 
 function initApp(data) {
@@ -214,7 +216,6 @@ function renderFooter(footerData) {
 
 // --- 6. SWIPER INITIALIZATION (Secure Logic) ---
 function initGearSlider() {
-    // Only attempt to run if the slider element exists on this page
     const sliderElement = document.querySelector('.gear-slider');
     
     if (sliderElement && typeof Swiper !== 'undefined') {
@@ -235,4 +236,54 @@ function initGearSlider() {
     } else if (sliderElement && typeof Swiper === 'undefined') {
         console.error("Swiper JS failed to load via CDN. Check SRI Hash.");
     }
+}
+
+// --- 7. RSS FEED LOGIC (Secure Logic - No innerHTML) ---
+function initRSSFeed() {
+    const container = document.getElementById("rss-feed-container");
+    if (!container) return;
+
+    fetch("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.espncricinfo.com/rss/content/story/feeds/0.xml"))
+        .then(r => r.json())
+        .then(data => {
+            if (!data.items) {
+                container.innerHTML = "<p class='text-muted'>News currently unavailable.</p>";
+                return;
+            }
+
+            const list = document.createElement("ul");
+            list.className = "news-list";
+
+            data.items.slice(0, 4).forEach(item => {
+                const li = document.createElement("li");
+                li.className = "news-item";
+                
+                // Securely build the link element
+                const a = document.createElement('a');
+                a.href = sanitizeUrl(item.link);
+                a.target = "_blank";
+                a.rel = "noopener noreferrer";
+                
+                // Title Span
+                const spanTitle = document.createElement('span');
+                spanTitle.className = "news-title";
+                spanTitle.textContent = item.title;
+                
+                // Arrow Span
+                const spanArrow = document.createElement('span');
+                spanArrow.className = "news-arrow";
+                spanArrow.textContent = " \u2192"; // Arrow symbol
+                
+                a.appendChild(spanTitle);
+                a.appendChild(spanArrow);
+                li.appendChild(a);
+                list.appendChild(li);
+            });
+
+            container.innerHTML = "";
+            container.appendChild(list);
+        })
+        .catch(() => {
+            container.innerHTML = "<p class='text-muted'>Could not load news feed.</p>";
+        });
 }

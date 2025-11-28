@@ -3,12 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kingston United Cricket Club</title>
     
+    <title>Kingston United Cricket Club | Premier Cricket in Kingston</title>
+    <meta name="description" content="Official website of Kingston United Cricket Club. Join the premier cricket community in Kingston, Ontario for competitive matches, youth training, and social events.">
+    <meta name="keywords" content="Cricket, Kingston, Sports Club, KUCC, Cricket Gear, Youth Sports, Ontario Cricket">
+    <meta name="theme-color" content="#00263E">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kingstonunitedcricketclub.ca/">
+    <meta property="og:title" content="Kingston United Cricket Club">
+    <meta property="og:description" content="Excellence in Cricket. Join the premier club in Kingston.">
+    <meta property="og:image" content="https://kingstonunitedcricketclub.ca/og-share-image.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kingstonunitedcricketclub.ca/">
+    <meta property="twitter:title" content="Kingston United Cricket Club">
+    <meta property="twitter:description" content="Excellence in Cricket. Join the premier club in Kingston.">
+    <meta property="twitter:image" content="https://kingstonunitedcricketclub.ca/og-share-image.jpg">
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsTeam",
+      "name": "Kingston United Cricket Club",
+      "sport": "Cricket",
+      "url": "https://kingstonunitedcricketclub.ca",
+      "logo": "https://kingstonunitedcricketclub.ca/logo.png",
+      "location": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kingston",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        }
+      }
+    }
+    </script>
 </head>
 <body>
 
@@ -41,7 +82,7 @@
                 <p class="hero-sub"></p>
                 <a href="#" class="btn-cta hero-cta">Loading...</a>
             </div>
-            </section>
+        </section>
 
         <section class="section-padding bg-surface-2">
             <div class="grid-wrapper">
@@ -101,41 +142,5 @@
 
     <script src="main.js"></script>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const container = document.getElementById("rss-feed-container");
-        if (!container) return;
-
-        fetch("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.espncricinfo.com/rss/content/story/feeds/0.xml"))
-        .then(r => r.json())
-        .then(data => {
-            if (!data.items) {
-                container.innerHTML = "<p class='text-muted'>News currently unavailable.</p>";
-                return;
-            }
-
-            const list = document.createElement("ul");
-            list.className = "news-list";
-
-            data.items.slice(0, 4).forEach(item => {
-                const li = document.createElement("li");
-                li.className = "news-item";
-                li.innerHTML = `
-                    <a href="${item.link}" target="_blank" rel="noopener noreferrer">
-                        <span class="news-title">${item.title}</span>
-                        <span class="news-arrow">&rarr;</span>
-                    </a>
-                `;
-                list.appendChild(li);
-            });
-
-            container.innerHTML = "";
-            container.appendChild(list);
-        })
-        .catch(() => {
-            container.innerHTML = "<p class='text-muted'>Could not load news feed.</p>";
-        });
-    });
-    </script>
 </body>
 </html>
