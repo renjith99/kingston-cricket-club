@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Contact Us | Kingston United Cricket Club</title>
+    <meta name="description" content="Get in touch with Kingston United Cricket Club. Contact us for membership inquiries, sponsorship opportunities, or match fixtures.">
+    <meta name="theme-color" content="#00263E">
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -53,7 +61,12 @@
                             The best way to reach us. We typically respond within 24 hours.
                         </p>
 
-                        <form name="contact" method="POST" data-netlify="true" action="/thank-you-contact.html" class="modern-form">
+                        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you-contact.html" class="modern-form">
+                            
+                            <p class="hidden" style="display: none;">
+                                <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                            </p>
+
                             <input type="hidden" name="form-name" value="contact">
 
                             <div class="form-group">
@@ -91,7 +104,7 @@
                             <h3 class="info-label">Training Grounds</h3>
                             <p class="info-text">
                                 <strong>Summer Season (May–Sept):</strong><br>
-                                Cricket Field, Kingston, ON<br>
+                                Kingston Memorial Cricket Ground, ON<br>
                                 <span class="text-muted text-sm">(Check schedule for details)</span>
                             </p>
                         </div>
@@ -99,10 +112,10 @@
                         <div class="info-card">
                             <h3 class="info-label">Socials</h3>
                             <div class="social-row">
-                                <a href="https://www.instagram.com/kingstonunitedcricketclub" target="_blank" class="social-pill">
+                                <a href="https://www.instagram.com/kingstonunitedcricketclub" target="_blank" rel="noopener noreferrer" class="social-pill">
                                     Instagram &nearr;
                                 </a>
-                                </div>
+                            </div>
                         </div>
 
                     </aside>
