@@ -13,17 +13,15 @@
     # 3. Force HTTPS (1 Year)
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     
-    # 4. Referrer Policy (NEW - Fixes Audit Warning)
-    # Only sends domain name (not full URL) to external links like sponsors
+    # 4. Referrer Policy
     Referrer-Policy = "strict-origin-when-cross-origin"
     
-    # 5. Permissions Policy (NEW - Fixes Audit Warning)
-    # Explicitly blocks access to sensitive device APIs
+    # 5. Permissions Policy
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
     
-    # 6. Content Security Policy (STRICT UPGRADE)
-    # removed 'unsafe-inline' from script-src
-    Content-Security-Policy = "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com;"
+    # 6. Content Security Policy (FIXED FOR NEWS FEED)
+    # Added: connect-src 'self' https://api.rss2json.com;
+    Content-Security-Policy = "default-src 'self'; connect-src 'self' https://api.rss2json.com; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com;"
 
 # Cache Control for Static Assets
 [[headers]]
